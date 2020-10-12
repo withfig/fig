@@ -1,8 +1,8 @@
 # custom files
-custom/aliases
-custom/apps
-custom/autocomplete
-custom/figpath.sh
+personal/aliases
+personal/apps
+personal/autocomplete
+personal/figpath.sh
 
 # temp files directories
 cache/
