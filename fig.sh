@@ -6,9 +6,6 @@
 # 	Wildcard means you can download other people's aliases
 
 
-export FIGPATH="~/.fig/bin:~/run:"
-FIGPATH=$FIGPATH""
-
 ##Run aliases shell script
 [ -s ~/.fig/custom/aliases/_myaliases.sh ] && source ~/.fig/custom/aliases/*.sh
 

@@ -3,11 +3,11 @@
 # This is the fig installation script. It runs just after you sign in for the first time
 
 # This script should be run via curl:
-#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/withfig/fig/master/tools/install.sh)"
+#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/withfig/fig/master/tools/install_and_upgrade.sh)"
 # or via wget:
-#   sh -c "$(wget -qO- https://raw.githubusercontent.com/withfig/fig/master/tools/install.sh)"
+#   sh -c "$(wget -qO- https://raw.githubusercontent.com/withfig/fig/master/tools/install_and_upgrade.sh)"
 # or via fetch:
-#   sh -c "$(fetch -o - https://raw.githubusercontent.com/withfig/fig/master/tools/install.sh)"
+#   sh -c "$(fetch -o - https://raw.githubusercontent.com/withfig/fig/master/tools/install_and_upgrade.sh)"
 
 
 # Don't do set -e for the moment. There may be errors with the git clone stuff
@@ -60,15 +60,28 @@ install_fig() {
     mkdir -p ~/.fig/personal/aliases
 
     touch ~/.fig/personal/aliases/_myaliases.sh
+
+    # Figpath definitions
     touch ~/.fig/personal/figpath.sh
+    FIG_FIGPATH='export FIGPATH="~/.fig/bin:~/run:"'
+
+    # Define the figpath variable in te figpath file
+    # The file should look like this:
+    #   export FIGPATH="~/.fig/bin:~/run:"
+    #   FIGPATH=$FIGPATH'~/abc/de fg/hi''~/zyx/wvut'
+
+    grep -q -e $FIG_FIGPATH ~/.fig/personal/figpath.sh || echo "$FIG_FIGPATH\n$(cat ~/.fig/personal/figpath.sh)" > ~/.fig/personal/figpath.sh
+    grep -q -e 'FIGPATH=$FIGPATH' ~/.fig/personal/figpath.sh || echo 'FIGPATH=$FIGPATH' >> ~/.fig/personal/figpath.sh
 
 }
 
+
+# Add the fig.sh to your profiles so it can be sourced on new terminal window load
 append_to_profiles() {
 
     OLDSOURCEVAR='[ -s ~/.fig/exports/env.sh ] && source ~/.fig/exports/env.sh'
-    SOURCEVAR='[ -s ~/.fig/fig.sh ] && source ~/.fig/fig,sh'
-    FULLSOURCEVAR="\n\n#### FIG ENV VARIABLES ####\n$SOURCEVAR\n#### END FIG ENV VARIABLES ####\n\n"
+    FIG_SOURCEVAR='[ -s ~/.fig/fig.sh ] && source ~/.fig/fig,sh'
+    FIG_FULLSOURCEVAR="\n\n#### FIG ENV VARIABLES ####\n$FIG_SOURCEVAR\n#### END FIG ENV VARIABLES ####\n\n"
 
     # Replace old sourcing in profiles 
     [ -e ~/.profile ] && sed -i '' 's/~\/.fig\/exports\/env.sh/~\/.fig\/fig.sh/g' ~/.profile
@@ -76,10 +89,9 @@ append_to_profiles() {
     [ -e ~/.bash_profile ] && sed -i '' 's/~\/.fig\/exports\/env.sh/~\/.fig\/fig.sh/g' ~/.bash_profile
 
     # Check that new sourcing exists. If it doesn't, add it
-    grep -q -e SOURCEVAR ~/.profile || echo FULLSOURCEVAR >> ~/.profile
-    grep -q -e SOURCEVAR ~/.zprofile || echo FULLSOURCEVAR >> ~/.zprofile
-    grep -q -e SOURCEVAR ~/.bash_profile || echo FULLSOURCEVAR >> ~/.bash_profile
-
+    grep -q -e $FIG_SOURCEVAR ~/.profile || echo $FIG_FULLSOURCEVAR >> ~/.profile
+    grep -q -e $FIG_SOURCEVAR ~/.zprofile || echo $FIG_FULLSOURCEVAR >> ~/.zprofile
+    grep -q -e $FIG_SOURCEVAR ~/.bash_profile || echo $FIG_FULLSOURCEVAR >> ~/.bash_profile
 }
 
 
