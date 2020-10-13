@@ -94,6 +94,13 @@ append_to_profiles() {
     grep -q -e $FIG_SOURCEVAR ~/.bash_profile || echo $FIG_FULLSOURCEVAR >> ~/.bash_profile
 }
 
+setup_welcome() {
+    mkdir -p ~/run/;
+
+    # Note: this gives 3 seconds to the curl request otherwise it just continues
+    [ -s ~/run/welcome.run ] || curl https://app.withfig.com/welcome/welcome.run --output ~/run/welcome.run --silent --max-time 3 || true
+}
+
 
 main() {
 
@@ -103,6 +110,7 @@ main() {
 
     install_fig
     append_to_profiles
+    setup_welcome
 
     echo success
     exit 0
