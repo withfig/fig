@@ -19,8 +19,10 @@ FIGREPO='https://github.com/withfig/fig.git'
 # The commit hash is passed in as a parameter to this script
 # We hard reset to this commit hash
 # If we don't get a hash, we just hard reset to the most recent version of the repo...
-FIG_TAG="origin/main"
+FIG_TAG="main"
 [  -z "$1" ] || FIG_TAG=$1
+
+echo Tag is $FIG_TAG
 
 
 ## Checks whether a command exists (like git)
@@ -41,24 +43,37 @@ install_fig() {
     mkdir -p ~/.fig
     cd ~/.fig
 
+
+    # OLD GIT INSTALLATION - SEEMED TO BE ERRORS ON THE FETCH....
     # Initialise git repo. Doesn't matter if git repo already exists
-    git init
+    # git init
 
     # Create remote for origin if it doesn't already exist
-    git remote set-url origin $FIGREPO || git remote add origin $FIGREPO
+    # git remote set-url origin $FIGREPO || git remote add origin $FIGREPO
 
 
     # Fetch most up to date version of withfig/fig repo
-    git fetch --all || error "git fetch failed"
+    # git fetch --all || error "git fetch failed"
 
     # Reset Fig fig back to a specific commit hash
-    git reset --hard $FIG_TAG || error "git reset failed"
+    # git reset --hard $FIG_TAG || error "git reset failed"
 
 
     # Delete all untracked files from the repo
     # Note: this doesn't delete empty folders. Git tracks files and therefore assumes an empty folder does not exist
-    git clean -f -d || error "git clean failed"
+    # git clean -f -d || error "git clean failed"
 
+
+    {
+    curl https://codeload.github.com/withfig/fig/tar.gz/$FIG_TAG | \
+        tar -xz --strip-components=1
+    } || {
+        echo downloading from main instead of fig tag_name && 
+        curl https://codeload.github.com/withfig/fig/tar.gz/main | \
+            tar -xz --strip-components=1
+    } || {
+        error "pulling withfig/fig repo failed"
+    }
 
     mkdir -p ~/.fig/autocomplete;
     cd ~/.fig/autocomplete
