@@ -1,8 +1,15 @@
+
+
+autocomplete/*
+!autocomplete/README.md
+
+
+
+
 # custom files and folders
-user/aliases
-user/apps
-user/autocomplete
-user/figpath.sh
+user/*
+!user/README.md
+
 
 # temp files directories
 cache/
