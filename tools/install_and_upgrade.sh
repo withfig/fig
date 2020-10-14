@@ -3,11 +3,11 @@
 # This is the fig installation script. It runs just after you sign in for the first time
 
 # This script should be run via curl:
-#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/withfig/fig/master/tools/install_and_upgrade.sh)"
+#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/withfig/fig/main/tools/install_and_upgrade.sh)"
 # or via wget:
-#   sh -c "$(wget -qO- https://raw.githubusercontent.com/withfig/fig/master/tools/install_and_upgrade.sh)"
+#   sh -c "$(wget -qO- https://raw.githubusercontent.com/withfig/fig/main/tools/install_and_upgrade.sh)"
 # or via fetch:
-#   sh -c "$(fetch -o - https://raw.githubusercontent.com/withfig/fig/master/tools/install_and_upgrade.sh)"
+#   sh -c "$(fetch -o - https://raw.githubusercontent.com/withfig/fig/main/tools/install_and_upgrade.sh)"
 
 
 
