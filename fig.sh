@@ -1,5 +1,5 @@
 ##Run aliases shell script
-[ -s ~/.fig/custom/aliases/_myaliases.sh ] && source ~/.fig/custom/aliases/*.sh
+[ -s ~/.fig/user/aliases/_myaliases.sh ] && source ~/.fig/user/aliases/*.sh
 
 
 # Gives fig context for cwd in each window
