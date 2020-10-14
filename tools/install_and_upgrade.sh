@@ -88,8 +88,8 @@ install_fig() {
     #   export FIGPATH="~/.fig/bin:~/run:"
     #   FIGPATH=$FIGPATH'~/abc/de fg/hi''~/zyx/wvut'
 
-    grep -q -e $FIG_FIGPATH ~/.fig/user/figpath.sh || echo "$FIG_FIGPATH\n$(cat ~/.fig/user/figpath.sh)" > ~/.fig/user/figpath.sh
-    grep -q -e 'FIGPATH=$FIGPATH' ~/.fig/user/figpath.sh || echo 'FIGPATH=$FIGPATH' >> ~/.fig/user/figpath.sh
+    grep -q $FIG_FIGPATH ~/.fig/user/figpath.sh || echo "$FIG_FIGPATH\n$(cat ~/.fig/user/figpath.sh)" > ~/.fig/user/figpath.sh
+    grep -q 'FIGPATH=$FIGPATH' ~/.fig/user/figpath.sh || echo 'FIGPATH=$FIGPATH' >> ~/.fig/user/figpath.sh
 
 }
 
@@ -109,9 +109,9 @@ append_to_profiles() {
 
     
     # Check that new sourcing exists. If it doesn't, add it
-    grep -q -e $FIG_SOURCEVAR ~/.profile || echo $FIG_FULLSOURCEVAR >> ~/.profile
-    grep -q -e $FIG_SOURCEVAR ~/.zprofile || echo $FIG_FULLSOURCEVAR >> ~/.zprofile
-    grep -q -e $FIG_SOURCEVAR ~/.bash_profile || echo $FIG_FULLSOURCEVAR >> ~/.bash_profile
+    grep -q $FIG_SOURCEVAR ~/.profile || echo $FIG_FULLSOURCEVAR >> ~/.profile
+    grep -q $FIG_SOURCEVAR ~/.zprofile || echo $FIG_FULLSOURCEVAR >> ~/.zprofile
+    grep -q $FIG_SOURCEVAR ~/.bash_profile || echo $FIG_FULLSOURCEVAR >> ~/.bash_profile
 }
 
 
