@@ -11,6 +11,6 @@ Run the following:
 mkdir -p ~/.fig/autocomplete; cd $_
 
 # Download all the files in the specs folder of this repo
-curl https://codeload.github.com/withfig/autocompelte/tar.gz/master | \
+curl https://codeload.github.com/withfig/autocomplete/tar.gz/master | \
 tar -xz --strip=2 autocomplete-master/specs
 ```
