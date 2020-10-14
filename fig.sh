@@ -1,18 +1,15 @@
-# this is what will be added to everyone's .profile, .bash_profile, and .zprofile
-
-
-# 1. Source custom/figpath.sh (or should this just be saved in fig defaults??? probably...)
-# 2. Source aliases (source custom/aliases/*.sh)
-# 	Wildcard means you can download other people's aliases
-
-
 ##Run aliases shell script
 [ -s ~/.fig/custom/aliases/_myaliases.sh ] && source ~/.fig/custom/aliases/*.sh
 
 
+# Gives fig context for cwd in each window
+fig bg:init $(tty)
 
-# Get current working directory of Terminal
+
+
+# Backup for getting Fig's context
 function cd() { builtin cd "$1"; fig bg:cd || true }
 fig bg:cd
+
 
 
