@@ -30,25 +30,25 @@ command_exists() {
 
 error() {
     echo "Error: $@" >&2
-	exit 1
+    exit 1
 }
 
 
 # Install fig. Override if already exists
 install_fig() {
 
-	# Create fig dir an cd into it
+    # Create fig dir an cd into it
     mkdir -p ~/.fig
-	cd ~/.fig
+    cd ~/.fig
 
-	# Initialise git repo. Doesn't matter if git repo already exists
+    # Initialise git repo. Doesn't matter if git repo already exists
     git init
 
     # Create remote for origin if it doesn't already exist
     git remote set-url origin $FIGREPO || git remote add origin $FIGREPO
 
 
-	# Fetch most up to date version of withfig/fig repo
+    # Fetch most up to date version of withfig/fig repo
     git fetch --all || error "git fetch failed"
 
     # Reset Fig fig back to a specific commit hash
@@ -71,7 +71,7 @@ install_fig() {
     }
 
 
-	# Make files and folders that the user can edit (that aren't overridden by above)
+    # Make files and folders that the user can edit (that aren't overridden by above)
     mkdir -p ~/.fig/user/aliases
     mkdir -p ~/.fig/user/apps
     mkdir -p ~/.fig/user/autocomplete
@@ -98,7 +98,7 @@ install_fig() {
 append_to_profiles() {
 
     OLDSOURCEVAR='[ -s ~/.fig/exports/env.sh ] && source ~/.fig/exports/env.sh'
-    FIG_SOURCEVAR='[ -s ~/.fig/fig.sh ] && source ~/.fig/fig,sh'
+    FIG_SOURCEVAR='[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh'
     FIG_FULLSOURCEVAR="\n\n#### FIG ENV VARIABLES ####\n$FIG_SOURCEVAR\n#### END FIG ENV VARIABLES ####\n\n"
 
     
