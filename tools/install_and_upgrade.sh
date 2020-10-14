@@ -2,13 +2,13 @@
 
 # This is the fig installation script. It runs just after you sign in for the first time
 
+# Replace TAG_NAME with the commit hash, git tag (like v1.0.25), or leave empty
 # This script should be run via curl:
-#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/withfig/fig/main/tools/install_and_upgrade.sh)"
+#   sh <(curl -fsSL https://raw.githubusercontent.com/withfig/fig/main/tools/install_and_upgrade.sh) TAG_NAME
 # or via wget:
-#   sh -c "$(wget -qO- https://raw.githubusercontent.com/withfig/fig/main/tools/install_and_upgrade.sh)"
+#   sh <(wget -qO- https://raw.githubusercontent.com/withfig/fig/main/tools/install_and_upgrade.sh) TAG_NAME
 # or via fetch:
-#   sh -c "$(fetch -o - https://raw.githubusercontent.com/withfig/fig/main/tools/install_and_upgrade.sh)"
-
+#   sh <(fetch -o - https://raw.githubusercontent.com/withfig/fig/main/tools/install_and_upgrade.sh) TAG_NAME
 
 
 
