@@ -48,10 +48,16 @@ install_fig() {
     git remote set-url origin $FIGREPO || git remote add origin $FIGREPO
 
 
-	# Pull down most up to date version of Fig
-	# This will override any changes you have made to fig. 
+	# Fetch most up to date version of withfig/fig repo
     git fetch --all || error "git fetch failed"
-    git reset --hard FIG_COMMITHASH || error "git reset failed"
+
+    # Reset Fig fig back to a specific commit hash
+    git reset --hard $FIG_COMMITHASH || error "git reset failed"
+
+
+    # Delete all untracked files from the repo
+    # Note: this doesn't delete empty folders. Git tracks files and therefore assumes an empty folder does not exist
+    git clean -f -d || error "git clean failed"
 
 
     mkdir -p ~/.fig/autocomplete;

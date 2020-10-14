@@ -10,6 +10,9 @@ autocomplete/*
 user/*
 !user/README.md
 
+team/*
+!team/README.md
+
 
 # temp files directories
 cache/
