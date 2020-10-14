@@ -19,8 +19,8 @@ FIGREPO='https://github.com/withfig/fig.git'
 # The commit hash is passed in as a parameter to this script
 # We hard reset to this commit hash
 # If we don't get a hash, we just hard reset to the most recent version of the repo...
-FIG_COMMITHASH="origin/main"
-[  -z "$1" ] || FIG_COMMITHASH=$1
+FIG_TAG="origin/main"
+[  -z "$1" ] || FIG_TAG=$1
 
 
 ## Checks whether a command exists (like git)
@@ -52,7 +52,7 @@ install_fig() {
     git fetch --all || error "git fetch failed"
 
     # Reset Fig fig back to a specific commit hash
-    git reset --hard $FIG_COMMITHASH || error "git reset failed"
+    git reset --hard $FIG_TAG || error "git reset failed"
 
 
     # Delete all untracked files from the repo
