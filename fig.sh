@@ -1,15 +1,17 @@
-##Run aliases shell script
-[ -s ~/.fig/user/aliases/_myaliases.sh ] && source ~/.fig/user/aliases/*.sh
+if command -v fig &> /dev/null && [ -z "$FIG" ]
+then
+	# Gives fig context for cwd in each window
+	fig bg:init $(tty) 
+	fig bg:cd
 
+	# Backup for getting Fig's context
+	function cd() { builtin cd "$1"; fig bg:cd || true; }
 
-# Gives fig context for cwd in each window
-fig bg:init $(tty)
+	##Run aliases shell script
+	[ -s ~/.fig/user/aliases/_myaliases.sh ] && source ~/.fig/user/aliases/*.sh
 
-
-
-# Backup for getting Fig's context
-function cd() { builtin cd "$1"; fig bg:cd || true }
-fig bg:cd
+	FIG=1
+fi
 
 
 
