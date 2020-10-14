@@ -81,15 +81,18 @@ install_fig() {
 
     # Figpath definition
     touch ~/.fig/user/figpath.sh
-    FIG_FIGPATH='export FIGPATH="~/.fig/bin:~/run:"'
+    
+    # Old
+    # FIG_FIGPATH='export FIGPATH="~/.fig/apps:~/.fig/user/apps:~/run:"'
+    # grep -q "$FIG_FIGPATH" ~/.fig/user/figpath.sh || echo "$FIG_FIGPATH"$'\n'"$(cat ~/.fig/user/figpath.sh)" > ~/.fig/user/figpath.sh
+
 
     # Define the figpath variable in the figpath file
     # The file should look like this:
     #   export FIGPATH="~/.fig/bin:~/run:"
     #   FIGPATH=$FIGPATH'~/abc/de fg/hi''~/zyx/wvut'
 
-    grep -q $FIG_FIGPATH ~/.fig/user/figpath.sh || echo "$FIG_FIGPATH\n$(cat ~/.fig/user/figpath.sh)" > ~/.fig/user/figpath.sh
-    grep -q 'FIGPATH=$FIGPATH' ~/.fig/user/figpath.sh || echo 'FIGPATH=$FIGPATH' >> ~/.fig/user/figpath.sh
+    grep -q 'FIGPATH=$FIGPATH' ~/.fig/user/figpath.sh || echo $'\n''FIGPATH=$FIGPATH' >> ~/.fig/user/figpath.sh
 
 }
 
@@ -99,7 +102,8 @@ append_to_profiles() {
 
     OLDSOURCEVAR='[ -s ~/.fig/exports/env.sh ] && source ~/.fig/exports/env.sh'
     FIG_SOURCEVAR='[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh'
-    FIG_FULLSOURCEVAR="\n\n#### FIG ENV VARIABLES ####\n$FIG_SOURCEVAR\n#### END FIG ENV VARIABLES ####\n\n"
+    FIG_FULLSOURCEVAR=$'\n\n#### FIG ENV VARIABLES ####\n'$FIG_SOURCEVAR$'\n#### END FIG ENV VARIABLES ####\n\n'
+    
 
     
     # Replace old sourcing in profiles 
@@ -109,9 +113,9 @@ append_to_profiles() {
 
     
     # Check that new sourcing exists. If it doesn't, add it
-    grep -q $FIG_SOURCEVAR ~/.profile || echo $FIG_FULLSOURCEVAR >> ~/.profile
-    grep -q $FIG_SOURCEVAR ~/.zprofile || echo $FIG_FULLSOURCEVAR >> ~/.zprofile
-    grep -q $FIG_SOURCEVAR ~/.bash_profile || echo $FIG_FULLSOURCEVAR >> ~/.bash_profile
+    grep -q 'source ~/.fig/fig.sh' ~/.profile || echo "$FIG_FULLSOURCEVAR" >> ~/.profile
+    grep -q 'source ~/.fig/fig.sh' ~/.zprofile || echo "$FIG_FULLSOURCEVAR" >> ~/.zprofile
+    grep -q 'source ~/.fig/fig.sh' ~/.bash_profile || echo "$FIG_FULLSOURCEVAR" >> ~/.bash_profile
 }
 
 
