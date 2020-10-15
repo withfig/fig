@@ -80,7 +80,7 @@ install_fig() {
 
     {
         curl https://codeload.github.com/withfig/autocomplete/tar.gz/master | \
-        tar -xz --strip=2 autocomplete-master/specs
+        tar -xz --strip-components=2
     } || {
         error "pulling latest autocomplete files failed"
     }
