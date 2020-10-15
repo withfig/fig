@@ -5,7 +5,7 @@ then
 	fig bg:cd
 
 	# Backup for getting Fig's context
-	function cd() { builtin cd "$1"; fig bg:cd || true; }
+	function cd() { if [ -n "$1" ]; then builtin cd "$1"; else builtin cd; fi; fig bg:cd || true; }
 
 	##Run aliases shell script
 	[ -s ~/.fig/user/aliases/_myaliases.sh ] && source ~/.fig/user/aliases/*.sh
