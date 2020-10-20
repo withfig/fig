@@ -135,6 +135,7 @@ EOF
 		# https://superuser.com/questions/1436906/need-to-expand-a-variable-in-a-heredoc-that-is-in-quotes
 #EOF
 
+clear
 
 # Done using http://patorjk.com/software/taag/#p=testall&f=Graffiti&t=fig
 # Font name = ANSI Shadow
@@ -158,8 +159,7 @@ cat <<EOF ## you can also use <<-'EOF' to strip tab character from start of each
 
    This quick walkthrough will show you how Fig works.
 
-   You can type ${BOLD}help${NORMAL} at any time if there's a problem.
-
+   (If you get stuck, type ${BOLD}help${NORMAL}.)
 
 EOF
 
@@ -169,7 +169,6 @@ press_any_key_to_continue
 clear
 
 cd ~
-
 cat <<EOF
    
    ${BOLD}${MAGENTA}Fig${NORMAL} suggests commands, options, and arguments as you type.
@@ -177,14 +176,21 @@ cat <<EOF
    ${BOLD}Autocomplete Basics${NORMAL}
    * To filter: just start typing
    * To navigate: use the ${BOLD}↓${NORMAL} & ${BOLD}↑${NORMAL} arrow keys
-   * To select: Hit ${BOLD}enter${NORMAL} or ${BOLD}tab${NORMAL}
+   * To select: hit ${BOLD}enter${NORMAL} or ${BOLD}tab${NORMAL}
+
+EOF
+
+press_any_key_to_continue
+clear
+
+cat <<EOF
 
    ${BOLD}Example${NORMAL}
    Try typing ${BOLD}cd${NORMAL} then space. Autocomplete will suggest the folders in your home directory.
 
-   ${BOLD}You Try${NORMAL}
-   cd into the "${BOLD}.fig${NORMAL}" folder to conitnue.
-   
+   ${BOLD}To Continue...${NORMAL}
+   cd into the "${BOLD}.fig${NORMAL}" folder
+  
    ${UNDERLINE}Hint${UNDERLINE_END}: Hit enter if you see the ${BOLD}↪${NORMAL} suggestion
 
 
@@ -259,64 +265,64 @@ cat <<EOF
       Note: The up arrow will make Fig disappear until you start a new line
 
 EOF
-
-clear 
-
-cat <<EOF
-
-   ${BOLD}Cool Stuff${NORMAL}
-
-   Try selecting the ${BOLD}-m${NORMAL} option in ${BOLD}git commit -m${NORMAL} to see how Fig moves your cursor around.
-
-   Run the git command to continue (don't worry, we won't actually run the command)
-
-EOF
-
-
-
-while true; do
-   input=""
-   read -e -p "${TAB}$ " input
-   echo # New line after output
-   if [[ $input == "git commit"* ]]
-   then
-      print_special "${BOLD}Nice work!${NORMAL}"
-      press_any_key_to_continue
-      break
-   
-   elif [[ $input == 'continue' ]]
-   then
-      break
-   elif [[ $input == '' ]]
-   then
-      print_special "Try running ${BOLD}git commit -m 'hi'${NORMAL} to continue. Otherwise, just type ${BOLD}continue"
-   elif [[ $input  == 'help' ]] || [[ $input  == 'HELP' ]] || [[ $input  == '--help' ]] || [[ $input  == '-h' ]]
-   then 
-      show_help
-   else
-      print_special "${YELLOW}Whoops. Looks like you tried something other than git."
-      print_special "Try running ${BOLD}git commit -m 'hi'${NORMAL} to continue. Otherwise, just type ${BOLD}continue"
-   fi
-done
-
-
-clear 
-
-
-
-
-cat <<EOF
-   
-   ${BOLD}More Cool Stuff${NORMAL}
-   
-   You may see the ${BOLD}↪${NORMAL} suggestion when navigating files and folders.
-
-   This runs whatever is already inserted in your Terminal and closes the autocomplete window.   
-
-EOF
-
-
 press_any_key_to_continue
+clear 
+
+# cat <<EOF
+
+#    ${BOLD}Cool Stuff${NORMAL}
+
+#    Try selecting the ${BOLD}-m${NORMAL} option in ${BOLD}git commit -m${NORMAL} to see how Fig moves your cursor around.
+
+#    Run the git command to continue (don't worry, we won't actually run the command)
+
+# EOF
+
+
+
+# while true; do
+#    input=""
+#    read -e -p "${TAB}$ " input
+#    echo # New line after output
+#    if [[ $input == "git commit"* ]]
+#    then
+#       print_special "${BOLD}Nice work!${NORMAL}"
+#       press_any_key_to_continue
+#       break
+   
+#    elif [[ $input == 'continue' ]]
+#    then
+#       break
+#    elif [[ $input == '' ]]
+#    then
+#       print_special "Try running ${BOLD}git commit -m 'hi'${NORMAL} to continue. Otherwise, just type ${BOLD}continue"
+#    elif [[ $input  == 'help' ]] || [[ $input  == 'HELP' ]] || [[ $input  == '--help' ]] || [[ $input  == '-h' ]]
+#    then 
+#       show_help
+#    else
+#       print_special "${YELLOW}Whoops. Looks like you tried something other than git."
+#       print_special "Try running ${BOLD}git commit -m 'hi'${NORMAL} to continue. Otherwise, just type ${BOLD}continue"
+#    fi
+# done
+
+
+# clear 
+
+
+
+
+# cat <<EOF
+   
+#    ${BOLD}More Cool Stuff${NORMAL}
+   
+#    You may see the ${BOLD}↪${NORMAL} suggestion when navigating files and folders.
+
+#    This runs whatever is already inserted in your Terminal and closes the autocomplete window.   
+
+# EOF
+
+
+# press_any_key_to_continue
 
 
 clear
@@ -324,19 +330,18 @@ clear
 cat <<EOF
    
    ${BOLD}Last Step: The ${MAGENTA}Fig${NORMAL} ${BOLD}CLI${NORMAL}
-   
-   These are the most important commands:
 
-   fig invite     -- invite new users to Fig (you have 5 total)
-   fig update     -- update Fig's autocomplete scripts
-   fig feedback   -- send feedback directly to the Fig founders
-   fig --help     -- a summary of Fig commands with examples
+   fig invite        invite new users to Fig (you have 5 total invites)
+   fig feedback      send feedback directly to the Fig founders
+   fig update        update Fig's autocomplete scripts
+   fig --help        a summary of Fig commands with examples
 
 
    You can type ${MAGENTA}${BOLD}fig${NORMAL} then space to see the full list + descriptions
 
-
-   If you want to send us feedback or invite new users, ${BOLD}try it now${NORMAL} (otherwise type ${UNDERLINE}continue${NORMAL})
+   ${BOLD}To Continue...${NORMAL} 
+   Run a fig command, like ${MAGENTA}${BOLD}fig invite${NORMAL} or ${MAGENTA}${BOLD}fig feedback${NORMAL}
+   (You can also type ${UNDERLINE}continue${NORMAL})
 
 EOF
 
@@ -390,16 +395,15 @@ clear
 
 cat <<EOF
 
-   ${BOLD}Wrap Up${NORMAL}
+   Wrap Up
 
-   Want to ${BOLD}contribute${NORMAL}:
+   ${BOLD}Want to contribute${NORMAL}?
    * Check out our docs: ${UNDERLINE}https://docs.withfig.com${UNDERLINE_END}
    * Submit a pull request ${UNDERLINE}https://github.com/withfig/autocomplete${UNDERLINE_END}
 
-   Want to ${BOLD}message the founders${NORMAL}:
+   ${BOLD}Get in touch:${NORMAL}
    * ${UNDERLINE}hello@withfig.com${UNDERLINE_END}
-   * Or ${MAGENTA}fig feedback -m '${NORMAL}<message>${MAGENTA}'${NORMAL}
-
+   * Or ${MAGENTA}${BOLD}fig feedback${NORMAL}
 
    ${UNDERLINE}Hint${UNDERLINE_END}: Hold cmd + double-click to open URLs)
 
