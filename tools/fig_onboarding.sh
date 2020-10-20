@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-
 # Fig onboarding shell script
 # Based somewhat on oh my zshell https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh
+
 
 
 # Colors
@@ -46,6 +46,40 @@ press_any_key_to_continue() {
     echo # new line
     echo # new line
 }
+
+
+
+
+# In case user quits script
+exit_script() {
+   echo
+   echo
+   print_special "Sorry to see you go."
+   print_special "If you have feedback, we'd appreciate you emailing hello@withfig.com"
+   echo
+
+   read -n 1 -r -p "${TAB}Do you want to finish Fig's onboarding in your next Terminal session? [y/N] "  response
+
+   if [[ "$response" =~ ^(yes|y|YES|Y)$ ]]
+   then
+      defaults write com.mschrage.fig onboarding -bool false
+   else
+      defaults write com.mschrage.fig onboarding -bool true
+   fi
+
+   echo
+
+   trap - SIGINT SIGTERM # clear the trap
+   kill -- -$$ # Kill the fig onboarding process
+}
+
+# If the user does ctrl + c, run the exit_script function
+trap exit_script SIGINT SIGTERM
+
+
+
+
+# Help text
 
 
 show_help() {
@@ -125,6 +159,11 @@ EOF
 }
 
 
+
+### Core Script ###
+
+
+
 #### How to print multiple lines easily
 
 #cat <<EOF
@@ -183,7 +222,7 @@ cat <<EOF
    Try typing ${BOLD}cd${NORMAL} then space. Autocomplete will suggest the folders in your home directory.
 
    ${BOLD}You Try${NORMAL}
-   cd into the "${BOLD}.fig${NORMAL}" folder to conitnue.
+   cd into the "${BOLD}.fig${NORMAL}" folder to continue.
    
    ${UNDERLINE}Hint${UNDERLINE_END}: Hit enter if you see the ${BOLD}↪${NORMAL} suggestion
 
@@ -266,9 +305,11 @@ cat <<EOF
 
    ${BOLD}Cool Stuff${NORMAL}
 
-   Try selecting the ${BOLD}-m${NORMAL} option in ${BOLD}git commit -m${NORMAL} to see how Fig moves your cursor around.
+   Certain autocomplete suggestions insert extra characters and move your cursor for you. 
+   
+   Run ${BOLD}git commit -m 'hello'${NORMAL} to continue.
 
-   Run the git command to continue (don't worry, we won't actually run the command)
+   (Don't worry, this will ${BOLD}not${NORMAL} actually run the git command)
 
 EOF
 
@@ -336,9 +377,11 @@ cat <<EOF
    You can type ${MAGENTA}${BOLD}fig${NORMAL} then space to see the full list + descriptions
 
 
-   If you want to send us feedback or invite new users, ${BOLD}try it now${NORMAL} (otherwise type ${UNDERLINE}continue${NORMAL})
+   If you invite new users, ${BOLD}try it now${NORMAL}. Otherwise type ${UNDERLINE}continue${NORMAL} to continue.
 
 EOF
+# Eventually prompt the user: do you want to invite friends to fig? type y if yes or otherwise it's a no
+# Only run the below if yes
 
 
 while true; do
@@ -387,7 +430,6 @@ clear
 
 
 
-
 cat <<EOF
 
    ${BOLD}Wrap Up${NORMAL}
@@ -407,12 +449,15 @@ cat <<EOF
 EOF
 
 
+
     
 echo # new line
 read -n 1 -s -r -p "${TAB}${HIGHLIGHT} Press any key to finish ${HIGHLIGHT_END}"
 echo # new line
 echo # new line
 
+
+defaults write com.mschrage.fig onboarding -bool true
 
 
 clear
