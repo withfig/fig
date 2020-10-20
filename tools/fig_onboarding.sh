@@ -50,7 +50,7 @@ press_any_key_to_continue() {
 
 show_help() {
    # make sure the final EOF is aligned with the end 
-less <<EOF
+less -R <<EOF
 
 
    ${BOLD}${MAGENTA}${UNDERLINE}Fig Onboarding Help${UNDERLINE_END}${NORMAL}
@@ -111,7 +111,7 @@ less <<EOF
 
    ${BOLD}I want to uninstall Fig${NORMAL}
       1. Quit Fig
-      2. `rm -rf ~/.fig`     <-- Be careful with this command! 
+      2. 'rm -rf ~/.fig'     <-- Be careful with this command! 
       3. If you're feeling generous, we would love to hear why you uninstalled Fig. hello@withfig.com
    
 
@@ -156,7 +156,7 @@ EOF
 cat <<EOF ## you can also use <<-'EOF' to strip tab character from start of each line
    Hey! Welcome to ${MAGENTA}${BOLD}Fig${NORMAL}.
 
-   This quick walkthrough will show you how Fig's autocomplete works.
+   This quick walkthrough will show you how Fig works.
 
    You can type ${BOLD}help${NORMAL} at any time if there's a problem.
 
@@ -311,10 +311,7 @@ cat <<EOF
    
    You may see the ${BOLD}↪${NORMAL} suggestion when navigating files and folders.
 
-   This just runs whatever is already inserted in your Terminal and closes the autocomplete window.
-
-   It makes your faster!
-   
+   This runs whatever is already inserted in your Terminal and closes the autocomplete window.   
 
 EOF
 
@@ -333,13 +330,13 @@ cat <<EOF
    fig invite     -- invite new users to Fig (you have 5 total)
    fig update     -- update Fig's autocomplete scripts
    fig feedback   -- send feedback directly to the Fig founders
-   fig --help     -- a summary Fig commands with examples
+   fig --help     -- a summary of Fig commands with examples
 
 
    You can type ${MAGENTA}${BOLD}fig${NORMAL} then space to see the full list + descriptions
 
 
-   If you want to send us feedback or invite new users, ${BOLD}try it now${NORMAL} (otherwise type continue)
+   If you want to send us feedback or invite new users, ${BOLD}try it now${NORMAL} (otherwise type ${UNDERLINE}continue${NORMAL})
 
 EOF
 
@@ -400,8 +397,8 @@ cat <<EOF
    * Submit a pull request ${UNDERLINE}https://github.com/withfig/autocomplete${UNDERLINE_END}
 
    Want to ${BOLD}message the founders${NORMAL}:
-   * ${UNDERLINE}mailto:hello@withfig.com${UNDERLINE_END}
-   * Or ${MAGENTA}fig feedback -m ‘${NORMAL}[your message here]${MAGENTA}’${NORMAL}
+   * ${UNDERLINE}hello@withfig.com${UNDERLINE_END}
+   * Or ${MAGENTA}fig feedback -m '${NORMAL}<message>${MAGENTA}'${NORMAL}
 
 
    ${UNDERLINE}Hint${UNDERLINE_END}: Hold cmd + double-click to open URLs)
