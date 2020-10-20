@@ -198,7 +198,7 @@ cat <<EOF ## you can also use <<-'EOF' to strip tab character from start of each
 
    This quick walkthrough will show you how Fig works.
 
-   (If you get stuck, type ${BOLD}help${NORMAL}.)
+   (If you get stuck, type ${BOLD}help${NORMAL})
 
 EOF
 
@@ -226,18 +226,11 @@ cat <<EOF
 
    ${BOLD}Example${NORMAL}
    Try typing ${BOLD}cd${NORMAL} then space. Autocomplete will suggest the folders in your home directory.
-
-<<<<<<< HEAD
-   ${BOLD}You Try${NORMAL}
-   cd into the "${BOLD}.fig${NORMAL}" folder to continue.
    
-=======
    ${BOLD}To Continue...${NORMAL}
    cd into the "${BOLD}.fig${NORMAL}" folder
   
->>>>>>> 43537f0df52e97da04d2189e112340ff81f4030f
    ${UNDERLINE}Hint${UNDERLINE_END}: Hit enter if you see the ${BOLD}↪${NORMAL} suggestion
-
 
 EOF
 
@@ -285,6 +278,7 @@ while true; do
    elif [[ $input  == 'help' ]] || [[ $input  == 'HELP' ]] || [[ $input  == '--help' ]] || [[ $input  == '-h' ]]
    then 
       show_help
+      print_special "Type ${BOLD}cd .fig/${NORMAL} to continue"
    else
       print_special "${YELLOW}Whoops. Looks like you tried something other than cd."
       print_special "Type ${BOLD}cd .fig/${NORMAL} to continue"
@@ -294,8 +288,6 @@ done
 
 
 clear 
-
-
 
 
 # Hiding Autocomplete
@@ -313,53 +305,49 @@ EOF
 press_any_key_to_continue
 clear 
 
-# cat <<EOF
+cat <<EOF
 
-#    ${BOLD}Cool Stuff${NORMAL}
+   ${BOLD}Another Example${NORMAL}
+   Fig can insert text and move your cursor around.
 
-<<<<<<< HEAD
-   Certain autocomplete suggestions insert extra characters and move your cursor for you. 
+   ${BOLD}To Continue...${NORMAL}
+   Run ${BOLD}git commit -m 'hello'${NORMAL}
+
    
-   Run ${BOLD}git commit -m 'hello'${NORMAL} to continue.
-
    (Don't worry, this will ${BOLD}not${NORMAL} actually run the git command)
-=======
-#    Try selecting the ${BOLD}-m${NORMAL} option in ${BOLD}git commit -m${NORMAL} to see how Fig moves your cursor around.
 
-#    Run the git command to continue (don't worry, we won't actually run the command)
->>>>>>> 43537f0df52e97da04d2189e112340ff81f4030f
-
-# EOF
+EOF
 
 
 
-# while true; do
-#    input=""
-#    read -e -p "${TAB}$ " input
-#    echo # New line after output
-#    if [[ $input == "git commit"* ]]
-#    then
-#       print_special "${BOLD}Nice work!${NORMAL}"
-#       press_any_key_to_continue
-#       break
+while true; do
+   input=""
+   read -e -p "${TAB}$ " input
+   echo # New line after output
+   if [[ $input == "git commit"* ]]
+   then
+      print_special "${BOLD}Nice work!${NORMAL}"
+      press_any_key_to_continue
+      break
    
-#    elif [[ $input == 'continue' ]]
-#    then
-#       break
-#    elif [[ $input == '' ]]
-#    then
-#       print_special "Try running ${BOLD}git commit -m 'hi'${NORMAL} to continue. Otherwise, just type ${BOLD}continue"
-#    elif [[ $input  == 'help' ]] || [[ $input  == 'HELP' ]] || [[ $input  == '--help' ]] || [[ $input  == '-h' ]]
-#    then 
-#       show_help
-#    else
-#       print_special "${YELLOW}Whoops. Looks like you tried something other than git."
-#       print_special "Try running ${BOLD}git commit -m 'hi'${NORMAL} to continue. Otherwise, just type ${BOLD}continue"
-#    fi
-# done
+   elif [[ $input == 'continue' ]]
+   then
+      break
+   elif [[ $input == '' ]]
+   then
+      print_special "Try running ${BOLD}git commit -m 'hello'${NORMAL} to continue. Otherwise, just type ${BOLD}continue"
+   elif [[ $input  == 'help' ]] || [[ $input  == 'HELP' ]] || [[ $input  == '--help' ]] || [[ $input  == '-h' ]]
+   then 
+      show_help
+      print_special "Try running ${BOLD}git commit -m 'hello'${NORMAL} to continue. Otherwise, just type ${BOLD}continue"
+   else
+      print_special "${YELLOW}Whoops. Looks like you tried something other than ${BOLD}git commit${NORMAL}."
+      print_special "Try running ${BOLD}git commit -m 'hello'${NORMAL} to continue. Otherwise, just type ${BOLD}continue"
+   fi
+done
 
 
-# clear 
+clear 
 
 
 
@@ -377,29 +365,23 @@ clear
 
 # press_any_key_to_continue
 
+# clear
 
-clear
+
 
 cat <<EOF
    
    ${BOLD}Last Step: The ${MAGENTA}Fig${NORMAL} ${BOLD}CLI${NORMAL}
 
-   fig invite        invite new users to Fig (you have 5 total invites)
+   fig invite        invite friends/colleagues to Fig's private beta (you have 5 total invites)
    fig feedback      send feedback directly to the Fig founders
    fig update        update Fig's autocomplete scripts
    fig --help        a summary of Fig commands with examples
 
 
-   You can type ${MAGENTA}${BOLD}fig${NORMAL} then space to see the full list + descriptions
-
-<<<<<<< HEAD
-
-   If you invite new users, ${BOLD}try it now${NORMAL}. Otherwise type ${UNDERLINE}continue${NORMAL} to continue.
-=======
    ${BOLD}To Continue...${NORMAL} 
    Run a fig command, like ${MAGENTA}${BOLD}fig invite${NORMAL} or ${MAGENTA}${BOLD}fig feedback${NORMAL}
    (You can also type ${UNDERLINE}continue${NORMAL})
->>>>>>> 43537f0df52e97da04d2189e112340ff81f4030f
 
 EOF
 # Eventually prompt the user: do you want to invite friends to fig? type y if yes or otherwise it's a no
@@ -437,13 +419,23 @@ while true; do
       break
    elif [[ $input == '' ]]
    then
-      print_special "Try a fig cli command like fig feedback or fig invite to continue. Otherwise, just type ${BOLD}continue"
+      echo
+      print_special "${BOLD}To Continue...${NORMAL}"
+      print_special "Run a fig command, like ${MAGENTA}${BOLD}fig invite${NORMAL} or ${MAGENTA}${BOLD}fig feedback${NORMAL}"
+      print_special "(You can also type ${UNDERLINE}continue${NORMAL})"
    elif [[ $input  == 'help' ]] || [[ $input  == 'HELP' ]] || [[ $input  == '--help' ]] || [[ $input  == '-h' ]]
    then 
       show_help
+      echo
+      print_special "${BOLD}To Continue...${NORMAL}"
+      print_special "Run a fig command, like ${MAGENTA}${BOLD}fig invite${NORMAL} or ${MAGENTA}${BOLD}fig feedback${NORMAL}"
+      print_special "(You can also type ${UNDERLINE}continue${NORMAL})"
    else
       print_special "${YELLOW}Whoops. Looks like you tried something other than a Fig command."
-      print_special "Try a ${BOLD}fig${NORMAL} cli command like ${BOLD}fig feedback${NORMAL} or ${BOLD}fig invite${NORMAL} to continue. Otherwise, just type ${BOLD}continue"
+      echo
+      print_special "${BOLD}To Continue...${NORMAL}"
+      print_special "Run a fig command, like ${MAGENTA}${BOLD}fig invite${NORMAL} or ${MAGENTA}${BOLD}fig feedback${NORMAL}"
+      print_special "(You can also type ${UNDERLINE}continue${NORMAL})"
    fi
 done
 
@@ -461,11 +453,10 @@ cat <<EOF
    * Submit a pull request ${UNDERLINE}https://github.com/withfig/autocomplete${UNDERLINE_END}
 
    ${BOLD}Get in touch:${NORMAL}
-   * ${UNDERLINE}hello@withfig.com${UNDERLINE_END}
+   * ${UNDERLINE}mailto:hello@withfig.com${UNDERLINE_END}
    * Or ${MAGENTA}${BOLD}fig feedback${NORMAL}
 
-   ${UNDERLINE}Hint${UNDERLINE_END}: Hold cmd + double-click to open URLs)
-
+   ${UNDERLINE}Hint${UNDERLINE_END}: Hold cmd + double-click to open URLs
 
 EOF
 
@@ -486,29 +477,18 @@ clear
 # Done using http://patorjk.com/software/taag/#p=testall&f=Graffiti&t=fig
 # Font name = Ivrit
 cat <<'EOF'
-                              We hope you enjoy
+                      We hope you enjoy
 
-          _____                    _____                    _____          
-         /\    \                  /\    \                  /\    \         
-        /::\    \                /::\    \                /::\    \        
-       /::::\    \               \:::\    \              /::::\    \       
-      /::::::\    \               \:::\    \            /::::::\    \      
-     /:::/\:::\    \               \:::\    \          /:::/\:::\    \     
-    /:::/__\:::\    \               \:::\    \        /:::/  \:::\    \    
-   /::::\   \:::\    \              /::::\    \      /:::/    \:::\    \   
-  /::::::\   \:::\    \    ____    /::::::\    \    /:::/    / \:::\    \  
- /:::/\:::\   \:::\    \  /\   \  /:::/\:::\    \  /:::/    /   \:::\ ___\ 
-/:::/  \:::\   \:::\____\/::\   \/:::/  \:::\____\/:::/____/  ___\:::|    |
-\::/    \:::\   \::/    /\:::\  /:::/    \::/    /\:::\    \ /\  /:::|____|
- \/____/ \:::\   \/____/  \:::\/:::/    / \/____/  \:::\    /::\ \::/    / 
-          \:::\    \       \::::::/    /            \:::\   \:::\ \/____/  
-           \:::\____\       \::::/____/              \:::\   \:::\____\    
-            \::/    /        \:::\    \               \:::\  /:::/    /    
-             \/____/          \:::\    \               \:::\/:::/    /     
-                               \:::\    \               \::::::/    /      
-                                \:::\____\               \::::/    /       
-                                 \::/    /                \::/____/        
-                                  \/____/                                  
-                                                                           
+ .----------------.  .----------------.  .----------------. 
+| .--------------. || .--------------. || .--------------. |
+| |  _________   | || |     _____    | || |    ______    | |
+| | |_   ___  |  | || |    |_   _|   | || |  .' ___  |   | |
+| |   | |_  \_|  | || |      | |     | || | / .'   \_|   | |
+| |   |  _|      | || |      | |     | || | | |    ____  | |
+| |  _| |_       | || |     _| |_    | || | \ `.___]  _| | |
+| | |_____|      | || |    |_____|   | || |  `._____.'   | |
+| |              | || |              | || |              | |
+| '--------------' || '--------------' || '--------------' |
+ '----------------'  '----------------'  '----------------'                                                                       
 
 EOF
