@@ -19,7 +19,7 @@ if  [[ $FIG_ONBOARDING = '0' ]]
 then
 	# echo running onboarding
 	# Check for prompts or onboarding
-	[ -s ~/.fig/tools/fig_onboarding.sh ] && source ~/.fig/tools/fig_onboarding.sh
+	[ -s ~/.fig/tools/fig_onboarding.sh ] && ~/.fig/tools/fig_onboarding.sh
 fi
 
 
