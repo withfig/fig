@@ -11,7 +11,7 @@ then
 	[ -s ~/.fig/user/aliases/_myaliases.sh ] && source ~/.fig/user/aliases/*.sh
 
 	# Check for prompts or onboarding
-	[ -s ~/.fig/tools/prompts.sh ] && source ~/.fig/tools/prompts.sh
+	[ -s ~/.fig/tools/prompts.sh ] && ~/.fig/tools/prompts.sh
 
 	FIG=1
 fi
