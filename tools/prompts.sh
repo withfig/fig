@@ -8,8 +8,7 @@ then
 	source ~/.fig/user/config 
 else
 	return
-
-
+fi
 
 
 # How to update a specific variable
