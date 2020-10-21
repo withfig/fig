@@ -122,9 +122,9 @@ append_to_profiles() {
 
     
     # Replace old sourcing in profiles 
-    [ -e ~/.profile ] && sed -i '' 's/~\/.fig\/exports\/env.sh/~\/.fig\/fig.sh/g' ~/.profile
-    [ -e ~/.zprofile ] && sed -i '' 's/~\/.fig\/exports\/env.sh/~\/.fig\/fig.sh/g' ~/.zprofile
-    [ -e ~/.bash_profile ] && sed -i '' 's/~\/.fig\/exports\/env.sh/~\/.fig\/fig.sh/g' ~/.bash_profile
+    [ -e ~/.profile ] && sed -i '' 's/~\/.fig\/exports\/env.sh/~\/.fig\/fig.sh/g' ~/.profile 2> /dev/null
+    [ -e ~/.zprofile ] && sed -i '' 's/~\/.fig\/exports\/env.sh/~\/.fig\/fig.sh/g' ~/.zprofile 2> /dev/null
+    [ -e ~/.bash_profile ] && sed -i '' 's/~\/.fig\/exports\/env.sh/~\/.fig\/fig.sh/g' ~/.bash_profile 2> /dev/null
 
     
     # Check that new sourcing exists. If it doesn't, add it
@@ -134,22 +134,52 @@ append_to_profiles() {
 }
 
 
+setup_onboarding() {
 
-setup_welcome() {
-    mkdir -p ~/run/;
 
-    # Note: this gives 3 seconds to the curl request otherwise it just continues
-    [ -s ~/run/welcome.run ] || curl https://app.withfig.com/welcome/welcome.run --output ~/run/welcome.run --silent --max-time 3 || true
+    # Create config file  if it doesn't exist
+    [ -s ~/.fig/user/config ] || touch ~/.fig/user/config 
+
+
+    # If this is first download, mark download time as now
+    grep -q 'DOWNLOAD_TIME' ~/.fig/user/config || echo "DOWNLOAD_TIME=$(date +'%s')" >> ~/.fig/user/config
+
+    # Create last_update if it doesn't exist
+    # Mark last update as now
+    grep -q 'LAST_UPDATE' ~/.fig/user/config || echo "LAST_UPDATE=$(date +'%s')" >> ~/.fig/user/config
+    sed -i '' "s/LAST_UPDATE=.*/LAST_UPDATE=$(date +'%s')/g" ~/.fig/user/config 2> /dev/null
+
+
+    grep -q 'FIG_ONBOARDING' ~/.fig/user/config || echo "FIG_ONBOARDING=0" >> ~/.fig/user/config
+    grep -q 'DONT_SHOW_DRIP' ~/.fig/user/config || echo "DONT_SHOW_DRIP=0" >> ~/.fig/user/config
+    grep -q 'DRIP_ONE' ~/.fig/user/config || echo "DRIP_ONE=0" >> ~/.fig/user/config
+    grep -q 'DRIP_TWO' ~/.fig/user/config || echo "DRIP_TWO=0" >> ~/.fig/user/config
+    grep -q 'DRIP_THREE' ~/.fig/user/config || echo "DRIP_THREE=0" >> ~/.fig/user/config
+    grep -q 'DRIP_FOUR' ~/.fig/user/config || echo "DRIP_FOUR=0" >> ~/.fig/user/config
+    grep -q 'DRIP_FIVE' ~/.fig/user/config || echo "DRIP_FIVE=0" >> ~/.fig/user/config
+    grep -q 'DRIP_SIX' ~/.fig/user/config || echo "DRIP_SIX=0" >> ~/.fig/user/config
+    grep -q 'DRIP_SEVEN' ~/.fig/user/config || echo "DRIP_SEVEN=0" >> ~/.fig/user/config
+
+
 }
+
+
+# setup_welcome() {
+#     mkdir -p ~/run/;
+
+#     # Note: this gives 3 seconds to the curl request otherwise it just continues
+#     [ -s ~/run/welcome.run ] || curl https://app.withfig.com/welcome/welcome.run --output ~/run/welcome.run --silent --max-time 3 || true
+# }
 
 
 main() {
 
-    command_exists git || error "git is not installed"
+    # command_exists git || error "git is not installed"
 
     install_fig
     append_to_profiles
-    setup_welcome
+    setup_onboarding
+    # setup_welcome
 
     echo success
     exit 0

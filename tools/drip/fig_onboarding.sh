@@ -62,9 +62,9 @@ exit_script() {
 
    if [[ "$response" =~ ^(yes|y|YES|Y)$ ]]
    then
-      defaults write com.mschrage.fig onboarding -bool false
+      sed -i '' "s/FIG_ONBOARDING=.*/FIG_ONBOARDING=0/g" ~/.fig/user/config 2> /dev/null
    else
-      defaults write com.mschrage.fig onboarding -bool true
+      sed -i '' "s/FIG_ONBOARDING=.*/FIG_ONBOARDING=1/g" ~/.fig/user/config 2> /dev/null
    fi
 
    echo
@@ -469,7 +469,7 @@ echo # new line
 echo # new line
 
 
-defaults write com.mschrage.fig onboarding -bool true
+sed -i '' "s/FIG_ONBOARDING=.*/FIG_ONBOARDING=1/g" ~/.fig/user/config 2> /dev/null
 
 
 clear
