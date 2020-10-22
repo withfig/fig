@@ -373,7 +373,7 @@ cat <<EOF
    
    ${BOLD}Last Step: The ${MAGENTA}Fig${NORMAL} ${BOLD}CLI${NORMAL}
 
-   fig invite        invite friends/colleagues to Fig's private beta (you have 5 total invites)
+   fig invite        invite up to 5 friends & teammates to Fig
    fig feedback      send feedback directly to the Fig founders
    fig update        update Fig's autocomplete scripts
    fig --help        a summary of Fig commands with examples
@@ -402,7 +402,6 @@ while true; do
    elif [[ $input == "fig invite"* ]]
    then
       eval $input
-      print_special "${BOLD}Your friends just got invited!${NORMAL}"
       press_any_key_to_continue
       break
    
@@ -446,8 +445,6 @@ clear
 
 cat <<EOF
 
-   Wrap Up
-
    ${BOLD}Want to contribute${NORMAL}?
    * Check out our docs: ${UNDERLINE}https://docs.withfig.com${UNDERLINE_END}
    * Submit a pull request ${UNDERLINE}https://github.com/withfig/autocomplete${UNDERLINE_END}
@@ -477,18 +474,18 @@ clear
 # Done using http://patorjk.com/software/taag/#p=testall&f=Graffiti&t=fig
 # Font name = Ivrit
 cat <<'EOF'
-                      We hope you enjoy
+            We hope you enjoy
 
- .----------------.  .----------------.  .----------------. 
-| .--------------. || .--------------. || .--------------. |
-| |  _________   | || |     _____    | || |    ______    | |
-| | |_   ___  |  | || |    |_   _|   | || |  .' ___  |   | |
-| |   | |_  \_|  | || |      | |     | || | / .'   \_|   | |
-| |   |  _|      | || |      | |     | || | | |    ____  | |
-| |  _| |_       | || |     _| |_    | || | \ `.___]  _| | |
-| | |_____|      | || |    |_____|   | || |  `._____.'   | |
-| |              | || |              | || |              | |
-| '--------------' || '--------------' || '--------------' |
- '----------------'  '----------------'  '----------------'                                                                       
+      ___                       ___     
+     /\__\                     /\__\    
+    /:/ _/_       ___         /:/ _/_   
+   /:/ /\__\     /\__\       /:/ /\  \  
+  /:/ /:/  /    /:/__/      /:/ /::\  \ 
+ /:/_/:/  /    /::\  \     /:/__\/\:\__\
+ \:\/:/  /     \/\:\  \__  \:\  \ /:/  /
+  \::/__/       ~~\:\/\__\  \:\  /:/  / 
+   \:\  \          \::/  /   \:\/:/  /  
+    \:\__\         /:/  /     \::/  /   
+     \/__/         \/__/       \/__/                                                                       
 
 EOF
