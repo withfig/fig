@@ -4,6 +4,9 @@ Please refer to our public [withfig/autocomplete](https://github.com/withfig/aut
 
 ### Get up to date completion scripts
 
+If you have **fig** installed, simply run `fig update`
+
+
 Run the following:
 
 ```
