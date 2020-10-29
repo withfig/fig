@@ -27,7 +27,6 @@ then
 	then
 		# Set environment VAR
 		export PROMPT_COMMAND='(fig bg:prompt & ); '$PROMPT_COMMAND
-		echo bash loaded
 
 	elif [[ $ZSH_NAME ]]
 	then
@@ -35,7 +34,6 @@ then
 		function go_fig() { (fig bg:prompt &); }
 		add-zsh-hook precmd go_fig
 
-		echo zsh loaded
 	fi
 	FIG_SHELL_VAR=1
 fi
