@@ -81,6 +81,7 @@ install_fig() {
     {
         curl https://codeload.github.com/withfig/autocomplete/tar.gz/master | \
         tar -xz --strip-components=2
+        
     } || {
         error "pulling latest autocomplete files failed"
     }
@@ -131,6 +132,10 @@ append_to_profiles() {
     grep -q 'source ~/.fig/fig.sh' ~/.profile || echo "$FIG_FULLSOURCEVAR" >> ~/.profile
     grep -q 'source ~/.fig/fig.sh' ~/.zprofile || echo "$FIG_FULLSOURCEVAR" >> ~/.zprofile
     grep -q 'source ~/.fig/fig.sh' ~/.bash_profile || echo "$FIG_FULLSOURCEVAR" >> ~/.bash_profile
+    grep -q 'source ~/.fig/fig.sh' ~/.bashrc || echo "$FIG_FULLSOURCEVAR" >> ~/.bashrc
+    grep -q 'source ~/.fig/fig.sh' ~/.zshrc || echo "$FIG_FULLSOURCEVAR" >> ~/.zshrc
+
+
 }
 
 
