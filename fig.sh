@@ -13,7 +13,8 @@ then
 	# Check for prompts or onboarding
 	[ -s ~/.fig/tools/prompts.sh ] && source ~/.fig/tools/prompts.sh
 
-	
+
+	export TTY=$(tty)
 	export FIG_ENV_VAR=1
 
 fi
@@ -26,12 +27,17 @@ then
 	if [[ $BASH ]]
 	then
 		# Set environment VAR
-		export PROMPT_COMMAND='(fig bg:prompt & ); '$PROMPT_COMMAND
+
+		if [[ ! $PROMPT_COMMAND == *"fig bg:prompt"* ]]
+		then 
+			export PROMPT_COMMAND='(fig bg:prompt $TTY &); '$PROMPT_COMMAND
+		fi
+
 
 	elif [[ $ZSH_NAME ]]
 	then
 		autoload -Uz add-zsh-hook
-		function go_fig() { (fig bg:prompt &); }
+		function go_fig() { (fig bg:prompt $TTY &); }
 		add-zsh-hook precmd go_fig
 
 	fi
