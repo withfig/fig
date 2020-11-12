@@ -202,7 +202,7 @@ cat <<EOF ## you can also use <<-'EOF' to strip tab character from start of each
 
 EOF
 
-
+fig bg:event "Started Shell Onboarding"
 press_any_key_to_continue
 
 clear
@@ -467,7 +467,7 @@ echo # new line
 
 
 sed -i '' "s/FIG_ONBOARDING=.*/FIG_ONBOARDING=1/g" ~/.fig/user/config 2> /dev/null
-
+fig bg:event "Completed Shell Onboarding"
 
 clear
 
