@@ -51,7 +51,7 @@ press_any_key_to_continue() {
 
 
 # In case user quits script
-exit_script() {
+exit_script_annoying() {
    echo
    echo
    print_special "Sorry to see you go."
@@ -69,13 +69,35 @@ exit_script() {
 
    echo
 
-   trap - SIGINT SIGTERM # clear the trap
+   trap - SIGINT SIGTERM SIGQUIT # clear the trap
    kill -- -$$ # Kill the fig onboarding process
 }
 
-# If the user does ctrl + c, run the exit_script function
-trap exit_script SIGINT SIGTERM
 
+# In case user quits script
+exit_script_nice() {
+   
+   sed -i '' "s/FIG_ONBOARDING=.*/FIG_ONBOARDING=1/g" ~/.fig/user/config 2> /dev/null
+
+   clear 
+   echo
+   echo
+   print_special "${BOLD}${UNDERLINE}Fig's onboarding was quit${UNDERLINE_END}${NORMAL}"
+   echo
+   print_special "You can redo this onboarding any time. Just run ${BOLD}${MAGENTA}fig onboarding${NORMAL}"
+   echo
+   print_special "Have feedback? Email ${UNDERLINE}hello@withfig.com${UNDERLINE_END}"
+   echo
+   echo
+
+   trap - SIGINT SIGTERM SIGQUIT # clear the trap
+   exit 1
+   # kill -- -$$# Kill the fig onboarding process. 
+}
+
+
+# If the user does ctrl + c, run the exit_script function
+trap exit_script_nice SIGINT SIGTERM SIGQUIT
 
 
 
@@ -100,6 +122,9 @@ less -R <<EOF
       ${UNDERLINE}To bring it back${UNDERLINE_END}: hit the enter key on an empty line once or twice. It should reappear. 
 
 
+   ${BOLD}Where is the Fig Menu${NORMAL}
+      Click the Fig Icon (◧) in your Mac status bar (top right of your screen)
+
 
    ${BOLD}I don't see Fig popup next to my cursor${NORMAL}
       Hmm. Try some of the following to debug.
@@ -107,24 +132,19 @@ less -R <<EOF
       1. Hit enter a few times then start typing. Maybe you hid it by hitting the up arrow key too many times.
 
       2. Make sure the Fig CLI tool is installed:
-         * Go to Fig Menu (◧) -> Debug -> Install CLI Tool 
+         * Go to Fig Menu (◧) > Settings > Developer > Install CLI Tool 
 
       3. Make sure Accessibility is enabled
-         * Go to Fig Menu (◧) -> Debug -> Request Accessibility Permission
-           (This should take you to System Preferences -> Security & Privacy -> Accessibility)
+         * Go to Fig Menu (◧) > Settings > Developer > Request Accessibility Permission
+           (This should take you to System Preferences > Security & Privacy > Accessibility)
          * Click the lock icon to unlock (it may prompt for your password)
          * If Fig is unchecked, check it. If Fig is checked, uncheck it then check it again.
 
       4. Toggle Autocomplete off and on again
-         * Go to Fig Menu (◧) -> Autocomplete 
-
+         * Go to Fig Menu (◧) > Autocomplete 
 
 
       If the problem persists: please let us know! Contact the Fig team at hello@withfig.com
-
-
-   ${BOLD}Where is the Fig Menu${NORMAL}
-      Click the Fig Icon (◧) in your Mac status bar (top right of your screen)
 
 
    ${BOLD}What does the ↪ symbol / suggestion mean?${NORMAL}
@@ -139,13 +159,12 @@ less -R <<EOF
 
 
    ${BOLD}I want to quit Fig${NORMAL}
-      * Go to Fig Menu (◧) -> Quit Fig
+      * Go to Fig Menu (◧) > Quit Fig
 
    
 
    ${BOLD}I want to uninstall Fig${NORMAL}
-      1. Quit Fig
-      2. 'rm -rf ~/.fig'     <-- Be careful with this command! 
+      * Go to Fig Menu (◧) > Settings > Uninstall Fig
       3. If you're feeling generous, we would love to hear why you uninstalled Fig. hello@withfig.com
    
 
@@ -192,13 +211,15 @@ cat <<'EOF'
 EOF
 
 
-
-cat <<EOF ## you can also use <<-'EOF' to strip tab character from start of each line
+## you can also use <<-'EOF' to strip tab character from start of each line
+cat <<EOF 
    Hey! Welcome to ${MAGENTA}${BOLD}Fig${NORMAL}.
 
    This quick walkthrough will show you how Fig works.
 
-   (If you get stuck, type ${BOLD}help${NORMAL})
+
+   Stuck? Type ${BOLD}help${NORMAL}. 
+   Want to quit? Hit ${BOLD}ctrl + c${NORMAL}
 
 EOF
 
@@ -259,7 +280,7 @@ while true; do
    then
       cd ~/.fig
       print_special ${BOLD}Awesome!${NORMAL}
-      print_special "Looks like you clicked backspace before hitting enter. We'll show you how to be faster in a second"
+      print_special "You may have seen ${BOLD}.fig ↪${NORMAL} and ${BOLD}.fig/${NORMAL}. The first runs the command for you. The second shows you the folders underneath .fig/"
       press_any_key_to_continue
       break
 
@@ -299,7 +320,7 @@ cat <<EOF
    Make the autocomplete window disappear by:
    * Hitting ${BOLD}esc${NORMAL}
    * Hitting the ${BOLD}↑${NORMAL} up arrow until you start seeing your shell history
-      Note: The up arrow will make Fig disappear until you start a new line
+      Note: You can use the ${BOLD}↓${NORMAL} down arrow to show Fig again
 
 EOF
 press_any_key_to_continue
