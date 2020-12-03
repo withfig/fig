@@ -47,6 +47,24 @@ press_any_key_to_continue() {
     echo # new line
 }
 
+press_enter_to_continue() {
+    
+   echo # new line
+   read -n 1 -s -r -p "${TAB}${HIGHLIGHT} Press enter to continue ${HIGHLIGHT_END}" pressed_key 
+   while true; do
+
+   if [ "$pressed_key" == "" ] # ie if pressed_key = enter
+   then
+      echo # new line
+      echo # new line
+      break
+   else 
+      read -n 1 -s -r pressed_key
+   fi
+   done
+    
+}
+
 
 
 
@@ -224,7 +242,7 @@ cat <<EOF
 EOF
 
 fig bg:event "Started Shell Onboarding"
-press_any_key_to_continue
+press_enter_to_continue
 
 clear
 
@@ -240,7 +258,7 @@ cat <<EOF
 
 EOF
 
-press_any_key_to_continue
+press_enter_to_continue
 clear
 
 cat <<EOF
@@ -272,7 +290,7 @@ while true; do
    then
       cd ~/.fig
       print_special "${BOLD}Awesome!${NORMAL}"
-      press_any_key_to_continue
+      press_enter_to_continue
       break
    
 
@@ -281,7 +299,7 @@ while true; do
       cd ~/.fig
       print_special ${BOLD}Awesome!${NORMAL}
       print_special "You may have seen ${BOLD}.fig ↪${NORMAL} and ${BOLD}.fig/${NORMAL}. The first runs the command for you. The second shows you the folders underneath .fig/"
-      press_any_key_to_continue
+      press_enter_to_continue
       break
 
 
@@ -290,7 +308,7 @@ while true; do
       cd ~/.fig
       print_special "${BOLD}Awesome!${NORMAL}"
       print_special "Looks like you cd'd into another directory. Glad you are playing around! We are going to put you in ~/.fig for the next step"
-      press_any_key_to_continue
+      press_enter_to_continue
       break
    elif [[ $input == '' ]]
    then
@@ -323,7 +341,7 @@ cat <<EOF
       Note: You can use the ${BOLD}↓${NORMAL} down arrow to show Fig again
 
 EOF
-press_any_key_to_continue
+press_enter_to_continue
 clear 
 
 cat <<EOF
@@ -348,7 +366,7 @@ while true; do
    if [[ $input == "git commit"* ]]
    then
       print_special "${BOLD}Nice work!${NORMAL}"
-      press_any_key_to_continue
+      press_enter_to_continue
       break
    
    elif [[ $input == 'continue' ]]
@@ -384,7 +402,7 @@ clear
 # EOF
 
 
-# press_any_key_to_continue
+# press_enter_to_continue
 
 # clear
 
@@ -394,45 +412,75 @@ cat <<EOF
    
    ${BOLD}Last Step: The ${MAGENTA}Fig${NORMAL} ${BOLD}CLI${NORMAL}
 
-   fig invite        invite up to 5 friends & teammates to Fig
+   fig               open the fig ◧ menu in the status bar
+   fig invite        invite up to 5 friends or teammates to Fig
    fig feedback      send feedback directly to the Fig founders
    fig update        update Fig's autocomplete scripts
    fig --help        a summary of Fig commands with examples
 
 
    ${BOLD}To Continue...${NORMAL} 
-   Run a fig command, like ${MAGENTA}${BOLD}fig invite${NORMAL} or ${MAGENTA}${BOLD}fig feedback${NORMAL}
+   Run the ${MAGENTA}${BOLD}fig${NORMAL} command. 
    (You can also type ${UNDERLINE}continue${NORMAL})
 
 EOF
+
+#, like ${MAGENTA}${BOLD}fig invite${NORMAL} or ${MAGENTA}${BOLD}fig feedback${NORMAL}
+
 # Eventually prompt the user: do you want to invite friends to fig? type y if yes or otherwise it's a no
 # Only run the below if yes
 
 
 while true; do
+
    input=""
    read -e -p "${TAB}$ " input
    echo # New line after output
-   if [[ $input == "fig feedback"* ]]
+   # if [[ $input == "fig feedback"* ]]
+   # then
+   #    eval $input
+   #    print_special "${BOLD}Thanks${NORMAL} so much for your feedback :)"
+   #    press_enter_to_continue
+   #    break
+
+   # elif [[ $input == "fig invite"* ]]
+   # then
+   #    eval $input
+   #    press_enter_to_continue
+   #    break
+   
+   # elif [[ $input == fig* ]]
+   # then
+   #    eval $input
+   #    print_special "${BOLD}Glad you like Fig!${NORMAL}"
+   #    press_enter_to_continue
+   #    break
+   if [[ $input == "fig" ]]
+   then
+      eval $input
+      print_special "${BOLD}Awesome!${NORMAL}"
+      echo
+      print_special "If Fig ever stops working, you can go here to see what's wrong."
+      press_enter_to_continue
+      break
+   elif [[ $input == "fig feedback"* ]]
    then
       eval $input
       print_special "${BOLD}Thanks${NORMAL} so much for your feedback :)"
-      press_any_key_to_continue
-      break
+      
+      echo
+      print_special "${BOLD}To Continue...${NORMAL}"
+      print_special "Run the ${MAGENTA}${BOLD}fig${NORMAL} command."
+      print_special "(You can also type ${UNDERLINE}continue${NORMAL})"
 
    elif [[ $input == "fig invite"* ]]
    then
       eval $input
-      press_any_key_to_continue
-      break
-   
-   elif [[ $input == fig* ]]
-   then
-      eval $input
-      print_special "${BOLD}Glad you like Fig!${NORMAL}"
-      press_any_key_to_continue
-      break
-   
+      print_special "${BOLD}Thanks${NORMAL} so much for inviting friends to Fig:)"
+      echo
+      print_special "${BOLD}To Continue...${NORMAL}"
+      print_special "Run the ${MAGENTA}${BOLD}fig${NORMAL} command."
+      print_special "(You can also type ${UNDERLINE}continue${NORMAL})"
 
    elif [[ $input == 'continue' ]]
    then
@@ -441,20 +489,20 @@ while true; do
    then
       echo
       print_special "${BOLD}To Continue...${NORMAL}"
-      print_special "Run a fig command, like ${MAGENTA}${BOLD}fig invite${NORMAL} or ${MAGENTA}${BOLD}fig feedback${NORMAL}"
+      print_special "Run the ${MAGENTA}${BOLD}fig${NORMAL} command."
       print_special "(You can also type ${UNDERLINE}continue${NORMAL})"
    elif [[ $input  == 'help' ]] || [[ $input  == 'HELP' ]] || [[ $input  == '--help' ]] || [[ $input  == '-h' ]]
    then 
       show_help
       echo
       print_special "${BOLD}To Continue...${NORMAL}"
-      print_special "Run a fig command, like ${MAGENTA}${BOLD}fig invite${NORMAL} or ${MAGENTA}${BOLD}fig feedback${NORMAL}"
+      print_special "Run the ${MAGENTA}${BOLD}fig${NORMAL} command."
       print_special "(You can also type ${UNDERLINE}continue${NORMAL})"
    else
-      print_special "${YELLOW}Whoops. Looks like you tried something other than a Fig command."
+      print_special "${YELLOW}Whoops. Looks like you tried something other Fig command."
       echo
       print_special "${BOLD}To Continue...${NORMAL}"
-      print_special "Run a fig command, like ${MAGENTA}${BOLD}fig invite${NORMAL} or ${MAGENTA}${BOLD}fig feedback${NORMAL}"
+      print_special "Run the ${MAGENTA}${BOLD}fig${NORMAL} command."
       print_special "(You can also type ${UNDERLINE}continue${NORMAL})"
    fi
 done
@@ -479,6 +527,8 @@ cat <<EOF
 EOF
 
 
+sed -i '' "s/FIG_ONBOARDING=.*/FIG_ONBOARDING=1/g" ~/.fig/user/config 2> /dev/null
+fig bg:event "Completed Shell Onboarding"
 
     
 echo # new line
@@ -487,8 +537,6 @@ echo # new line
 echo # new line
 
 
-sed -i '' "s/FIG_ONBOARDING=.*/FIG_ONBOARDING=1/g" ~/.fig/user/config 2> /dev/null
-fig bg:event "Completed Shell Onboarding"
 
 clear
 
