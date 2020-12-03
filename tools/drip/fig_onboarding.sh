@@ -3,7 +3,8 @@
 # Fig onboarding shell script
 # Based somewhat on oh my zshell https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh
 
-
+# needed so that ^c works when run as `fig onboarding`
+set -e
 
 # Colors
 BLACK=$(tput setaf 0)
