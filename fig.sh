@@ -24,8 +24,7 @@ then
     fi
 
 
-    # Try to make sure this doesn't load twice!!!
-    # Need to add fig.sh to bashrx and .zshrc
+    # We use a shell variable to make sure this doesn't load twice
     if [ -z "$FIG_SHELL_VAR" ]
     then
         if [[ $BASH ]]
@@ -41,7 +40,7 @@ then
         elif [[ $ZSH_NAME ]]
         then
             autoload -Uz add-zsh-hook
-            function go_fig() { (fig bg:prompt $TTY &); }
+            function fig_precmd_hook() { (fig bg:prompt $TTY &); }
             add-zsh-hook precmd go_fig
 
         fi
