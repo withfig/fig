@@ -32,7 +32,7 @@ The config directory is structured like so:
     <td>reserved for individual user apps, runbooks, and completion specs. Not tracked by git</td>
 </tr>
 <tr>
-    <td>fig.sh/</td>
+    <td>fig.sh</td>
     <td>establishes Fig's shell and env variables. This file is sourced on every new shell session. See below</td>
 </tr>
 </table>
