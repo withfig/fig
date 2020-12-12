@@ -39,9 +39,9 @@ The config directory is structured like so:
 
 
 
-# The fig.sh Script
+# The fig.sh script
 
-Fig source the `fig.sh script` by adding the following line of code to your `.bashrc`, `.zshrc`, `.zprofile`, `.profile`, and `.bash_profile`
+Fig sources the `fig.sh script` by adding the following line of code to your `.bashrc`, `.zshrc`, `.zprofile`, `.profile`, and `.bash_profile`
 
 ```bash
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
@@ -52,7 +52,7 @@ Fig source the `fig.sh script` by adding the following line of code to your `.ba
 Why do we source `fig.sh` in so many dotfiles? In order to get context on your Terminal (e.g. current working directory), we need to source Fig for each new *shell* session, not just *Terminal* session. e.g. if you open a new terminal, and switch between bash and zsh shells.
 
 
-### fig.sh Sourcing Time
+### fig.sh sourcing time
 
 Sourcing `fig.sh`  takes around **9ms**. We use conditionals to make sure the script is only run once . If you haven't started a new shell session in a while, it could take up to 200ms. But afterwards will go back to 9ms.
 

@@ -4,15 +4,15 @@
 
 # Replace TAG_NAME with the commit hash, git tag (like v1.0.25), or leave empty
 # This script should be run via curl:
-#   sh <(curl -fsSL https://raw.githubusercontent.com/withfig/fig/main/tools/install_and_upgrade.sh) TAG_NAME
+#   sh <(curl -fsSL https://raw.githubusercontent.com/withfig/config/main/tools/install_and_upgrade.sh) TAG_NAME
 # or via wget:
-#   sh <(wget -qO- https://raw.githubusercontent.com/withfig/fig/main/tools/install_and_upgrade.sh) TAG_NAME
+#   sh <(wget -qO- https://raw.githubusercontent.com/withfig/config/main/tools/install_and_upgrade.sh) TAG_NAME
 # or via fetch:
-#   sh <(fetch -o - https://raw.githubusercontent.com/withfig/fig/main/tools/install_and_upgrade.sh) TAG_NAME
+#   sh <(fetch -o - https://raw.githubusercontent.com/withfig/config/main/tools/install_and_upgrade.sh) TAG_NAME
 
 
 
-FIGREPO='https://github.com/withfig/fig.git'
+FIGREPO='https://github.com/withfig/config.git'
 
 # We are constantly pushing changes to the public repo
 # Each version of the swift app is only compatible with a certain version of the public repo
@@ -52,7 +52,7 @@ install_fig() {
     # git remote set-url origin $FIGREPO || git remote add origin $FIGREPO
 
 
-    # Fetch most up to date version of withfig/fig repo
+    # Fetch most up to date version of withfig/config repo
     # git fetch --all || error "git fetch failed"
 
     # Reset Fig fig back to a specific commit hash
@@ -65,14 +65,14 @@ install_fig() {
 
 
     {
-    curl https://codeload.github.com/withfig/fig/tar.gz/$FIG_TAG | \
+    curl https://codeload.github.com/withfig/config/tar.gz/$FIG_TAG | \
         tar -xz --strip-components=1
     } || {
         echo downloading from main instead of fig tag_name && 
-        curl https://codeload.github.com/withfig/fig/tar.gz/main | \
+        curl https://codeload.github.com/withfig/config/tar.gz/main | \
             tar -xz --strip-components=1
     } || {
-        error "pulling withfig/fig repo failed"
+        error "pulling withfig/config repo failed"
     }
 
     mkdir -p ~/.fig/autocomplete;
