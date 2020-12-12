@@ -535,10 +535,12 @@ clear
 cat <<EOF
 
    ${BOLD}Want to contribute${NORMAL}?
+
    * Check out our docs: ${UNDERLINE}https://docs.withfig.com${UNDERLINE_END}
    * Submit a pull request ${UNDERLINE}https://github.com/withfig/autocomplete${UNDERLINE_END}
 
    ${BOLD}Get in touch:${NORMAL}
+
    * ${UNDERLINE}mailto:hello@withfig.com${UNDERLINE_END}
    * Or ${MAGENTA}${BOLD}fig feedback${NORMAL}
 
@@ -571,19 +573,52 @@ clear
 
 # Done using http://patorjk.com/software/taag/#p=testall&f=Graffiti&t=fig
 # Font name = Ivrit
-cat <<'EOF'
-            We hope you enjoy
+# cat <<'EOF'
 
-      ___                       ___     
-     /\__\                     /\__\    
-    /:/ _/_       ___         /:/ _/_   
-   /:/ /\__\     /\__\       /:/ /\  \  
-  /:/ /:/  /    /:/__/      /:/ /::\  \ 
- /:/_/:/  /    /::\  \     /:/__\/\:\__\
- \:\/:/  /     \/\:\  \__  \:\  \ /:/  /
-  \::/__/       ~~\:\/\__\  \:\  /:/  / 
-   \:\  \          \::/  /   \:\/:/  /  
-    \:\__\         /:/  /     \::/  /   
-     \/__/         \/__/       \/__/                                                                       
+#                         We hope you enjoy
+      
+#    .----------------.  .----------------.  .----------------. 
+#    | .--------------. || .--------------. || .--------------. |
+#    | |  _________   | || |     _____    | || |    ______    | |
+#    | | |_   ___  |  | || |    |_   _|   | || |  .' ___  |   | |
+#    | |   | |_  \_|  | || |      | |     | || | / .'   \_|   | |
+#    | |   |  _|      | || |      | |     | || | | |    ____  | |
+#    | |  _| |_       | || |     _| |_    | || | \ `.___]  _| | |
+#    | | |_____|      | || |    |_____|   | || |  `._____.'   | |
+#    | |              | || |              | || |              | |
+#    | '--------------' || '--------------' || '--------------' |
+#    '----------------'  '----------------'  '----------------' 
+
+
+# EOF
+
+
+## NOTE: DON'T FORMAT THIS, IT IS ACTUALLY FORMATTED CORRECTLY...
+cat <<EOF
+
+   ${BOLD}                        ######## ####  ######   
+                           ##        ##  ##    ##  
+                           ##        ##  ##        
+                           ######    ##  ##   #### 
+                           ##        ##  ##    ##  
+                           ##        ##  ##    ##  
+   ${NORMAL}We hope you enjoy...${BOLD}    ##       ####  ######${NORMAL}
+
+EOF
+
+cat <<EOF
+
+   ${BOLD}Note from Fig Team (11 Dec. 2020)${NORMAL} 
+   For the moment, we (${BOLD}${MAGENTA}Fig${NORMAL}) have decided to focus on autocomplete / 
+   intellisense for the Terminal. 
+
+   When we launched, we were doing a lot: runbooks, apps, sidebar, shortcuts, 
+   an app store for the Terminal… We tried to do too much too quickly.
+
+   Limiting our focus to autocomplete in the short-term helps us make sure Fig 
+   is a great experience. We plan to revisit everything mentioned above 
+   (and more) very soon.
+
+   Brendan & Matt
 
 EOF
