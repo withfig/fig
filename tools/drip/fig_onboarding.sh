@@ -51,7 +51,15 @@ press_any_key_to_continue() {
 press_enter_to_continue() {
     
    echo # new line
-   read -n 1 -s -r -p "${TAB}${HIGHLIGHT} Press enter to continue ${HIGHLIGHT_END}" pressed_key 
+
+   if [ "$1" != "" ]
+   then
+      read -n 1 -s -r -p "${TAB}${HIGHLIGHT} $1 ${HIGHLIGHT_END}" pressed_key 
+   else
+      read -n 1 -s -r -p "${TAB}${HIGHLIGHT} Press enter to continue ${HIGHLIGHT_END}" pressed_key 
+   fi
+
+
    while true; do
 
    if [ "$pressed_key" == "" ] # ie if pressed_key = enter
@@ -62,6 +70,7 @@ press_enter_to_continue() {
    else 
       read -n 1 -s -r pressed_key
    fi
+
    done
     
 }
@@ -253,6 +262,7 @@ cat <<EOF
    ${BOLD}${MAGENTA}Fig${NORMAL} suggests commands, options, and arguments as you type.
 
    ${BOLD}Autocomplete Basics${NORMAL}
+
    * To filter: just start typing
    * To navigate: use the ${BOLD}↓${NORMAL} & ${BOLD}↑${NORMAL} arrow keys
    * To select: hit ${BOLD}enter${NORMAL} or ${BOLD}tab${NORMAL}
@@ -270,7 +280,7 @@ cat <<EOF
    ${BOLD}To Continue...${NORMAL}
    cd into the "${BOLD}.fig${NORMAL}" folder
   
-   ${UNDERLINE}Hint${UNDERLINE_END}: Hit enter if you see the ${BOLD}↪${NORMAL} suggestion
+   ${UNDERLINE}Tip${UNDERLINE_END}: Selecting a suggestion with a ${BOLD}🟥 red icon${NORMAL} and ${BOLD}↪${NORMAL} symbol will immediately execute a command
 
 EOF
 
@@ -303,6 +313,10 @@ while true; do
       press_enter_to_continue
       break
 
+   elif [[ $input == cd* ]]
+   then
+   print_special "Whoops. Looks like you just typed ${BOLD}cd${NORMAL}. Type ${BOLD}cd .fig/${NORMAL} to continue"
+   print_special "You can hit enter if you see the ${BOLD}↪${NORMAL} symbol"
 
    elif [[ $input == cd* ]]
    then
@@ -311,10 +325,12 @@ while true; do
       print_special "Looks like you cd'd into another directory. Glad you are playing around! We are going to put you in ~/.fig for the next step"
       press_enter_to_continue
       break
+
    elif [[ $input == '' ]]
    then
       print_special "Type ${BOLD}cd .fig/${NORMAL} to continue"
       print_special "You can hit enter if you see the ${BOLD}↪${NORMAL} symbol"
+   
    elif [[ $input  == 'help' ]] || [[ $input  == 'HELP' ]] || [[ $input  == '--help' ]] || [[ $input  == '-h' ]]
    then 
       show_help
@@ -337,6 +353,7 @@ cat <<EOF
    ${BOLD}Hiding Autocomplete${NORMAL}
 
    Make the autocomplete window disappear by:
+
    * Hitting ${BOLD}esc${NORMAL}
    * Hitting the ${BOLD}↑${NORMAL} up arrow until you start seeing your shell history
       Note: You can use the ${BOLD}↓${NORMAL} down arrow to show Fig again
@@ -351,6 +368,7 @@ cat <<EOF
    Fig can insert text and move your cursor around.
 
    ${BOLD}To Continue...${NORMAL}
+
    Run ${BOLD}git commit -m 'hello'${NORMAL}
 
    
@@ -421,6 +439,7 @@ cat <<EOF
 
 
    ${BOLD}To Continue...${NORMAL} 
+
    Run the ${MAGENTA}${BOLD}fig${NORMAL} command. 
    (You can also type ${UNDERLINE}continue${NORMAL})
 
@@ -461,7 +480,7 @@ while true; do
       eval $input
       print_special "${BOLD}Awesome!${NORMAL}"
       echo
-      print_special "If Fig ever stops working, you can go here to see what's wrong."
+      print_special "If Fig ever stops working, you can use the debug tool at the top of this menu to see what's wrong."
       press_enter_to_continue
       break
    elif [[ $input == "fig feedback"* ]]
@@ -523,9 +542,18 @@ cat <<EOF
    * ${UNDERLINE}mailto:hello@withfig.com${UNDERLINE_END}
    * Or ${MAGENTA}${BOLD}fig feedback${NORMAL}
 
-   ${UNDERLINE}Hint${UNDERLINE_END}: Hold cmd + double-click to open URLs
-
 EOF
+
+# Tell use how to open urls based on terminal type
+# https://superuser.com/questions/683962/how-to-identify-the-terminal-from-a-script
+if [[ "$TERM_PROGRAM" == "iTerm.app" ]]
+then
+   echo "   ${UNDERLINE}Hint${UNDERLINE_END}: Hold cmd + click to open URLs"
+else
+   echo "   ${UNDERLINE}Hint${UNDERLINE_END}: Hold cmd + double-click to open URLs"
+fi
+echo
+
 
 
 sed -i '' "s/FIG_ONBOARDING=.*/FIG_ONBOARDING=1/g" ~/.fig/user/config 2> /dev/null
@@ -533,7 +561,7 @@ fig bg:event "Completed Shell Onboarding"
 
     
 echo # new line
-read -n 1 -s -r -p "${TAB}${HIGHLIGHT} Press any key to finish ${HIGHLIGHT_END}"
+press_enter_to_continue 'Press enter to finish'
 echo # new line
 echo # new line
 
