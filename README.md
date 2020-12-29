@@ -1,58 +1,49 @@
-# Config Directory (~/.fig/)
-Yes, the name **fig** comes from con**fig**uration
+# ◧ Fig Home
+
+[Fig](https://withfig.com?ref=github_autocomplete) adds apps, shortcuts, and autocomplete to your Terminal ✨
+
+![Fig Visual Autocomplete For Your Terminal Demo](https://withfig.com/video/demos/autocomplete/autocomplete_demo_for_email.gif)
+
+***\*Note\****: We currently only work on iTerm2 and the native Terminal on macOS.
 
 
 
-Fig's configuration files are located in the  `~/.fig` directory.
+👉 *Fig is currently in private beta. Sign up for early access at [withfig.com](http://withfig.com/)*
 
 
 
-The config directory is structured like so:
+## Repositories
 
+Use this repository to submit new issues and have discussions.
 
-<table>
-<tr>
-    <td>autocomplete/</td>
-    <td>autocomplete completion specs. See <a href="https://github.com/withfig/autocomplete"> withfig/autocomplete</a></td>
-</tr>
-<tr>
-    <td>apps/</td>
-    <td>installed Fig apps. See <a href="https://github.com/withfig/autocomplete"> withfig/fig-apps</a> </td>
-</tr>
-<tr>
-    <td>team/</td>
-    <td>reserved for team apps, runbooks, and completion specs. Not tracked by git</td>
-</tr>
-<tr>
-    <td>tools/</td>
-    <td>config scripts e.g. installation, onboarding, uninstallation...</td>
-</tr>
-<tr>
-    <td>user/</td>
-    <td>reserved for individual user apps, runbooks, and completion specs. Not tracked by git</td>
-</tr>
-<tr>
-    <td>fig.sh</td>
-    <td>establishes Fig's shell and env variables. This file is sourced on every new shell session. See below</td>
-</tr>
-</table>
+- [withfig/autocomplete](https://github.com/withfig/autocomplete): Collection of all specs for [autocomplete](https://docs.withfig.com/autocomplete). Contribute new specs and update old specs here.
+
+- [withfig/config](https://github.com/withfig/config): Fig's default configuration at install. Contains apps, installation, and update scripts.
 
 
 
-# The fig.sh script
+## Issues
 
-Fig sources the `fig.sh script` by adding the following line of code to your `.bashrc`, `.zshrc`, `.zprofile`, `.profile`, and `.bash_profile`
+Submit bug reports and feature requests as issues to this repo. Make sure to add the appropriate labels that pertain to your issue.
 
-```bash
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-```
+All Fig related issues should be opened in this repo, not in feature repos.
 
 
 
-Why do we source `fig.sh` in so many dotfiles? In order to get context on your Terminal (e.g. current working directory), we need to source Fig for each new *shell* session, not just *Terminal* session. e.g. if you open a new terminal, and switch between bash and zsh shells.
+## Contributing
+
+- To learn more about how to contribute, see `CONTRIBUTING.MD`
 
 
-### fig.sh sourcing time
 
-Sourcing `fig.sh`  takes around **9ms**. We use conditionals to make sure the script is only run once . If you haven't started a new shell session in a while, it could take up to 200ms. But afterwards will go back to 9ms.
+## Support and Questions
 
+1. Read through our [user support guide](https://withfig.com/docs) in the docs to see if we already have a solution.
+
+2. Look through past issues in this repo
+
+3. Join the [Fig Community](https://figcommunity.slack.com/join/shared_invite/zt-fupa9n8g-sfHm8MyBn1DBaCj8SoIxSA#/) to discuss with others, and to chat with the Fig team for immediate support
+
+4. We may ask you to create an issue here if we can’t solve it on Slack!
+
+For any unanswered questions or other inquiries, feel free to email us anytime: hello@withfig.com
