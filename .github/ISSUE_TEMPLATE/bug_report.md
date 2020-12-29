@@ -7,8 +7,6 @@ assignees: ''
 
 ---
 
-*NOTE: File an issue for bug reports only. For support requests, please refer to the [Fig Community](https://figcommunity.slack.com/join/shared_invite/zt-fupa9n8g-sfHm8MyBn1DBaCj8SoIxSA#/).
-
 **Summary:**
 Autocomplete is occasionally nonresponsive.
 
