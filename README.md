@@ -1,4 +1,6 @@
-# ◧ Fig Home
+<p align="center">
+    <img width="300" src="static/FigBanner.png"/>
+</p>
 
 [Fig](https://withfig.com?ref=github_autocomplete) adds apps, shortcuts, and autocomplete to your Terminal ✨
 
