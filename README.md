@@ -2,7 +2,11 @@
     <img width="300" src="static/FigBanner.png"/>
 </p>
 
-[Fig](https://withfig.com?ref=github_autocomplete) adds apps, shortcuts, and autocomplete to your Terminal ✨
+---
+
+# Fig
+
+[Fig](https://withfig.com?ref=github_fig) adds apps, shortcuts, and autocomplete to your Terminal ✨
 
 ![Fig Visual Autocomplete For Your Terminal Demo](https://withfig.com/video/demos/autocomplete/autocomplete_demo_for_email.gif)
 
