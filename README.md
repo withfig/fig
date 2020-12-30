@@ -32,7 +32,7 @@ All Fig related issues should be opened in this repo, not in feature repos.
 
 ## Contributing
 
-- To learn more about how to contribute, see `CONTRIBUTING.MD`
+- To learn more about how to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 
 
