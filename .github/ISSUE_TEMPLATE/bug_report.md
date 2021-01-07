@@ -1,8 +1,8 @@
 ---
 name: Bug report
-about: Report a bug
+about: Report a bug that is not covered by one of the other templates below
 title: "[BUG]"
-labels: ''
+labels: 'bug'
 assignees: ''
 
 ---
@@ -26,3 +26,4 @@ Terminal: (MacOS Terminal, iTerm2, etc)
 Version of Fig: 2.0
 
 **Additional Notes:**
+
