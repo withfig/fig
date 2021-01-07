@@ -5,11 +5,11 @@ contact_links:
     about: Use this repo to file issues with specific completion specs (e.g. git, aws, docker...) or the completion spec standard as defined in our docs (e.g. the standard doesn't work with this specific type of CLI argument)
   - name: withfig/config
     url: https://github.com/withfig/config/issues/new/choose
-    about: Use this repo to file issues with Fig's installation and update scripts (e.g. perhaps the Fig CLI is not being added to your $PATH because of a custom set up or shell)
+    about: Use this repo to file issues with Fig's installation and update scripts (e.g. perhaps the Fig CLI is not being added to your $PATH) or if you want to add / update support for another shell (e.g. Fig doesn't work properly with tsch)
   - name: 👋 Slack
     url: https://waitlist.withfig.com/waitlist
     about: Get instant support from the Fig Community Slack
   - name: 📩 Email
-    url: https://withfig.com/
+    url: https://tinyurl.com/y4m9zqlw
     about: Get support from the Fig team at hello@withfig.com
     
