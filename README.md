@@ -20,25 +20,40 @@
 
 ## Repositories
 
-Use this repository to submit new issues and have discussions.
+Use this (withfig/fig) repository to submit new issues and have discussions.
 
 - [withfig/autocomplete](https://github.com/withfig/autocomplete): Collection of all specs for [autocomplete](https://docs.withfig.com/autocomplete). Contribute new specs and update old specs here.
 
-- [withfig/config](https://github.com/withfig/config): Fig's default configuration at install. Contains apps, installation, and update scripts.
-
-
-
-## Issues
-
-Submit bug reports and feature requests as issues to this repo. Make sure to add the appropriate labels that pertain to your issue.
-
-All Fig related issues should be opened in this repo, not in feature repos.
-
+- [withfig/config](https://github.com/withfig/config): Fig's default configuration at install. Contains installation, and update scripts.
 
 
 ## Contributing
 
-- To learn more about how to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md)
+To learn more about how to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md)
+
+
+You can start building [autcomplete specs](https://github.com/withfig/autocomplete) for yourself, your team, and the community today.
+
+
+## Docs
+
+Our docs are available at [withfig.com/docs](https://withfig.com/docs).  
+**Note**: we are currently upgrading our website and re-writing our docs entirely. They will be available in mid-January 2021. Please bear with us
+
+
+
+## Issues, Bugs & Feature Requests
+
+[Create a new issue](https://github.com/withfig/fig/issues/new/choose) in this (withfig/fig) repo. If needed, our issue templates will then redirect you to the right place.
+
+
+Most issues are made in this repo. Only create issues in other repos for the following:
+
+- [withfig/autocomplete](https://github.com/withfig/autocomplete): Issues with specific completion specs (e.g. git, aws...) or the completion spec standard (e.g. the standard doesn't work with this specific type of CLI argument) 
+- [withfig/config](https://github.com/withfig/config): Issues with Fig's installation and update scripts (e.g. perhaps the Fig CLI is not being added to your $PATH because of a custom set up or shell) 
+
+Again, start [here](https://github.com/withfig/fig/issues/new/choose) and then we will redirect you accordingly.
+
 
 
 
@@ -48,8 +63,10 @@ All Fig related issues should be opened in this repo, not in feature repos.
 
 2. Look through past issues in this repo
 
-3. Join the [Fig Community](https://figcommunity.slack.com/join/shared_invite/zt-fupa9n8g-sfHm8MyBn1DBaCj8SoIxSA#/) to discuss with others, and to chat with the Fig team for immediate support
+3. Join the [Fig Community](https://waitlist.withfig.com/community) to discuss with others, and to chat with the Fig team for immediate support
+
+[![Fig Slack Community](https://github.com/jesseduffield/lazydocker/raw/master/docs/resources/slack_rgb.png)](https://waitlist.withfig.com/community)
 
 4. We may ask you to create an issue here if we can’t solve it on Slack!
 
-For any unanswered questions or other inquiries, feel free to email us anytime: hello@withfig.com
+For any unanswered questions or other inquiries, feel free to email us anytime: [hello@withfig.com](mailto:hello@withfig.com)
