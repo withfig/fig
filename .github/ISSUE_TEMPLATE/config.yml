@@ -8,7 +8,8 @@ contact_links:
     about: Use this repo to file issues with Fig's installation and update scripts (e.g. perhaps the Fig CLI is not being added to your $PATH because of a custom set up or shell)
   - name: 👋 Slack
     url: https://waitlist.withfig.com/waitlist
-    about: Get support from the Fig Community Slack
+    about: Get instant support from the Fig Community Slack
   - name: 📩 Email
-    about: Get support from the team at hello@withfig.com
+    url: https://withfig.com/
+    about: Get support from the Fig team at hello@withfig.com
     
