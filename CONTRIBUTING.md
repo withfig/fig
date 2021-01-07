@@ -14,15 +14,15 @@ We want to make contributing to Fig as easy and transparent as possible, whether
 
 ## Our Repos
 
-We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
+We use GitHub to host code, track issues and feature requests, and accept pull requests.
 
 Here are some of our primary repos.
 
-[withfig/fig](https://github.com/withfig/fig): The central repo. All issues taken here.
+[withfig/fig](https://github.com/withfig/fig): The central repo. Most issues go here. We will direct you to the right place if not.
 
-[withfig/autocomplete](https://github.com/withfig/autocomplete): Collection of all specs for [autocomplete](https://docs.withfig.com/autocomplete). Contribute new specs and update old specs here.
+[withfig/autocomplete](https://github.com/withfig/autocomplete): Collection of all specs for [autocomplete](https://docs.withfig.com/autocomplete). Contribute new specs, update old specs, and file issues for existing specs here.
 
-[withfig/config](https://github.com/withfig/config): Fig's default configuration at install. Contains apps, installation, and update scripts.
+[withfig/config](https://github.com/withfig/config): Fig's default configuration at install. Contains all installation and update scripts.
 
 
 
@@ -41,7 +41,7 @@ Fig welcomes code contributions via pull request. Here are a few styling guides 
 
 ## Bug reports and feature requests
 
-We use GitHub issues to track public bugs as well as new feature requests. If you have any input, [open a new issue](https://github.com/withfig/fig)! Note that all issues should be filed under the [withfig/fig](https://github.com/withfig/fig) repo, not under independent feature repos.
+We use GitHub issues to track public bugs as well as new feature requests. If you have any input, [open a new issue](https://github.com/withfig/fig)! If you're not sure where a bug report or feature goes, start at the [withfig/fig](https://github.com/withfig/fig) repo, and we will direct you.
 
 
 
@@ -53,6 +53,6 @@ By contributing, you agree that your contributions will be licensed under its MI
 
 ## Questions and support
 
-For product support, visit our [docs](https://withfig.com/docs) and join the [Fig Community](https://figcommunity.slack.com/join/shared_invite/zt-fupa9n8g-sfHm8MyBn1DBaCj8SoIxSA#/) for instant support and discussion.
+For product support, visit our [docs](https://withfig.com/docs) and join the [Fig Community](http://waitlist.withfig.com/community) for instant support and discussion.
 
-Any unanswered questions or inquiries? We're always open to chat at hello@withfig.com.
+Any unanswered questions or inquiries? We're always open to chat at [hello@withfig.com](mailto:hello@withfig.com)
