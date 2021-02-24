@@ -536,7 +536,7 @@ cat <<EOF
 
    ${BOLD}Want to contribute${NORMAL}?
 
-   * Check out our docs: ${UNDERLINE}https://docs.withfig.com${UNDERLINE_END}
+   * Check out our docs: ${UNDERLINE}https://withfig.com/docs/getting-started${UNDERLINE_END}
    * Submit a pull request ${UNDERLINE}https://github.com/withfig/autocomplete${UNDERLINE_END}
 
    ${BOLD}Get in touch:${NORMAL}
