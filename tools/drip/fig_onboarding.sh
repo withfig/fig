@@ -519,7 +519,7 @@ while true; do
       print_special "Run the ${MAGENTA}${BOLD}fig${NORMAL} command."
       print_special "(You can also type ${UNDERLINE}continue${NORMAL})"
    else
-      print_special "${YELLOW}Whoops. Looks like you tried something other Fig command."
+      print_special "${YELLOW}Whoops. Looks like you tried something other than the ${MAGENTA}${BOLD}fig${NORMAL} command."
       echo
       print_special "${BOLD}To Continue...${NORMAL}"
       print_special "Run the ${MAGENTA}${BOLD}fig${NORMAL} command."
