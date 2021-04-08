@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Report a bug in Fig. Please create the issue in one of the repos below if it is more relevant.
-title: "[BUG]"
+title: ""
 labels: 'bug'
 assignees: ''
 

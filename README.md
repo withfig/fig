@@ -8,13 +8,14 @@
 
 [Fig](https://withfig.com?ref=github_fig) adds apps, shortcuts, and autocomplete to your Terminal ✨
 
+
+👉 *Fig is currently in private beta. Sign up for early access at [withfig.com](http://withfig.com?ref=github_fig)*
+
 ![Fig Visual Autocomplete For Your Terminal Demo](https://withfig.com/video/demos/autocomplete/autocomplete_demo_for_email.gif)
 
-***\*Note\****: We currently only work on iTerm2 and the native Terminal on macOS.
+***\*Note\****: We currently work on macOS in VSCode, iTerm2, and the native Terminal (more coming soon).
 
 
-
-👉 *Fig is currently in private beta. Sign up for early access at [withfig.com](http://withfig.com/)*
 
 
 
@@ -26,20 +27,20 @@ Use this (withfig/fig) repository to submit new issues and have discussions.
 
 - [withfig/config](https://github.com/withfig/config): Fig's default configuration at install. Contains installation, and update scripts.
 
+- [withfig/docs](https://github.com/withfig/docs): Fig's docs!
+
 
 ## Contributing
 
 To learn more about how to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 
-You can start building [autcomplete specs](https://github.com/withfig/autocomplete) for yourself, your team, and the community today.
+You can start building [autocomplete specs](https://github.com/withfig/autocomplete) for yourself, your team, and the community today.
 
 
 ## Docs
 
-Our docs are available at [withfig.com/docs](https://withfig.com/docs).  
-**Note**: we are currently upgrading our website and re-writing our docs entirely. They will be available in mid-January 2021. Please bear with us
-
+Our docs are available at [withfig.com/docs](https://withfig.com/docs). If you want to make changes, visit [withfig/docs](https://github.com/withfig/docs)
 
 
 ## Issues, Bugs & Feature Requests
@@ -56,17 +57,16 @@ Again, start [here](https://github.com/withfig/fig/issues/new/choose) and then w
 
 
 
-
 ## Support and Questions
 
-1. Read through our [user support guide](https://withfig.com/docs) in the docs to see if we already have a solution.
+1. Check out our public forum: [forum.withfig.com](https://forum.withfig.com)
 
-2. Look through past issues in this repo
-
-3. Join the [Fig Community](https://waitlist.withfig.com/community) to discuss with others, and to chat with the Fig team for immediate support
+2. Join the [Fig Community Slack](https://waitlist.withfig.com/community) to discuss with others and get immediate support from the Fig team
 
 [![Fig Slack Community](https://github.com/jesseduffield/lazydocker/raw/master/docs/resources/slack_rgb.png)](https://waitlist.withfig.com/community)
 
-4. We may ask you to create an issue here if we can’t solve it on Slack!
+3. Read through the [support guide](https://withfig.com/docs) in the docs 
 
-For any unanswered questions or other inquiries, feel free to email us anytime: [hello@withfig.com](mailto:hello@withfig.com)
+4. Look through [past issues](https://github.com/withfig/fig/issues) in this repo or create an issue [here](https://github.com/withfig/fig/issues/new/choose) 
+
+For any unanswered questions or other inquiries, feel free to email us any time: [hello@withfig.com](mailto:hello@withfig.com)

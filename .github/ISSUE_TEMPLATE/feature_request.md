@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: Suggest an idea for Fig. Please create the issue in one of the repos below if it is more relevant.
-title: "[FEATURE]"
+title: ""
 labels: 'feature'
 assignees: ''
 

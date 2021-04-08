@@ -1,7 +1,7 @@
 ---
 name: Improve Documentation
 about: Suggest an improvement to Fig's documentation (withfig.com/docs)
-title: "[DOCS]"
+title: ""
 labels: 'docs'
 assignees: ''
 
