@@ -1,7 +1,7 @@
 blank_issues_enabled: true
 contact_links:
   - name: withfig/docs
-    url: https://github.com/withfig/docs/issues/new/
+    url: https://github.com/withfig/docs/issues/new
     about: Use this repo to file issues related to Fig's docs: withfig.com/docs
   - name: withfig/autocomplete
     url: https://github.com/withfig/autocomplete/issues/new/choose
@@ -9,13 +9,13 @@ contact_links:
   - name: withfig/config
     url: https://github.com/withfig/config/issues/new/choose
     about: Use this repo to file issues related to Fig's shell integrations, SSH integration, shell onboarding flow, and installation/update scripts.
-  - name: 💬 Forum
+  - name: 💬  Forum
     url: https://forum.withfig.com
     about: Fig's support knowledge base 
-  - name: 👋 Slack
+  - name: 👋  Slack
     url: https://waitlist.withfig.com/waitlist
     about: Get instant support from the Fig Community Slack
-  - name: 📩 Email
+  - name: 📩  Email
     url: https://tinyurl.com/y4m9zqlw
     about: Get support from the Fig team at hello@withfig.com
     
