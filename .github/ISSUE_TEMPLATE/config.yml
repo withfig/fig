@@ -1,17 +1,20 @@
 blank_issues_enabled: true
 contact_links:
+  - name: withfig/docs
+    url: https://github.com/withfig/docs/issues/new/
+    about: Use this repo to file issues related to Fig's docs: withfig.com/docs
   - name: withfig/autocomplete
     url: https://github.com/withfig/autocomplete/issues/new/choose
-    about: Use this repo to file issues with specific completion specs (e.g. git, aws, docker...) or the completion spec standard as defined in our docs (e.g. the standard doesn't work with this specific type of CLI argument)
+    about: Use this repo to file issues related to autocomplete. These include issues for: specific completion specs (e.g. git, aws, docker...), building specs, and Fig's bash parser.
   - name: withfig/config
     url: https://github.com/withfig/config/issues/new/choose
-    about: Use this repo to file issues with Fig's installation and update scripts (e.g. perhaps the Fig CLI is not being added to your $PATH) or if you want to add / update support for another shell (e.g. Fig doesn't work properly with tsch)
-  - name: 👋 Slack
-    url: https://waitlist.withfig.com/waitlist
-    about: Get instant support from the Fig Community Slack
+    about: Use this repo to file issues related to Fig's shell integrations, SSH integration, shell onboarding flow, and installation/update scripts.
   - name: 💬 Forum
     url: https://forum.withfig.com
     about: Fig's support knowledge base 
+  - name: 👋 Slack
+    url: https://waitlist.withfig.com/waitlist
+    about: Get instant support from the Fig Community Slack
   - name: 📩 Email
     url: https://tinyurl.com/y4m9zqlw
     about: Get support from the Fig team at hello@withfig.com
