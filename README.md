@@ -6,12 +6,12 @@
 
 # Fig
 
-[Fig](https://withfig.com?ref=github_fig) adds apps, shortcuts, and autocomplete to your Terminal ✨
+[Fig](https://fig.io?ref=github_fig) adds apps, shortcuts, and autocomplete to your Terminal ✨
 
 
-👉 *Fig is currently in private beta. Sign up for early access at [withfig.com](http://withfig.com?ref=github_fig)*
+👉 *Fig is currently in private beta. Sign up for early access at [fig.io](http://fig.io?ref=github_fig)*
 
-![Fig Visual Autocomplete For Your Terminal Demo](https://withfig.com/video/demos/autocomplete/autocomplete_demo_for_email.gif)
+![Fig Visual Autocomplete For Your Terminal Demo](https://fig.io/video/demos/autocomplete/autocomplete_demo_for_email.gif)
 
 ***\*Note\****: We currently work on macOS in VSCode, iTerm2, and the native Terminal (more coming soon).
 
@@ -23,7 +23,7 @@
 
 Use this (withfig/fig) repository to submit new issues and have discussions.
 
-- [withfig/autocomplete](https://github.com/withfig/autocomplete): Collection of all specs for [autocomplete](https://docs.withfig.com/autocomplete). Contribute new specs and update old specs here.
+- [withfig/autocomplete](https://github.com/withfig/autocomplete): Collection of all specs for [autocomplete](https://fig.io/docs/autocomplete). Contribute new specs and update old specs here.
 
 - [withfig/config](https://github.com/withfig/config): Fig's default configuration at install. Contains installation, and update scripts.
 
@@ -40,7 +40,7 @@ You can start building [autocomplete specs](https://github.com/withfig/autocompl
 
 ## Docs
 
-Our docs are available at [withfig.com/docs](https://withfig.com/docs). If you want to make changes, visit [withfig/docs](https://github.com/withfig/docs)
+Our docs are available at [fig.io/docs](https://fig.io/docs). If you want to make changes, visit [withfig/docs](https://github.com/withfig/docs)
 
 
 ## Issues, Bugs & Feature Requests
@@ -65,8 +65,8 @@ Again, start [here](https://github.com/withfig/fig/issues/new/choose) and then w
 
 [![Fig Slack Community](https://github.com/jesseduffield/lazydocker/raw/master/docs/resources/slack_rgb.png)](https://waitlist.withfig.com/community)
 
-3. Read through the [support guide](https://withfig.com/docs) in the docs 
+3. Read through the [support guide](https://fig.io/docs) in the docs 
 
 4. Look through [past issues](https://github.com/withfig/fig/issues) in this repo or create an issue [here](https://github.com/withfig/fig/issues/new/choose) 
 
-For any unanswered questions or other inquiries, feel free to email us any time: [hello@withfig.com](mailto:hello@withfig.com)
+For any unanswered questions or other inquiries, feel free to email us any time: [hello@fig.io](mailto:hello@fig.io)
