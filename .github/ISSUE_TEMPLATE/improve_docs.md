@@ -1,6 +1,6 @@
 ---
 name: Improve Documentation
-about: Suggest an improvement to Fig's documentation (withfig.com/docs)
+about: Suggest an improvement to Fig's documentation (fig.io/docs)
 title: ""
 labels: 'docs'
 assignees: ''
