@@ -63,7 +63,11 @@ Again, start [here](https://github.com/withfig/fig/issues/new/choose) and then w
 
 2. Join the [Fig Community Discord](https://fig.io/community) to discuss with others and get immediate support from the Fig team
 
-<a href="https://fig.io/community"><img href="http://fig.io/icons/discord-logo-square.jpeg" style="width: 50px; height: 50px"/> </a>
+<p align="center">
+<a href="https://fig.io/community">
+    <img src="http://fig.io/icons/discord-logo-square.png" width="60px" height="60px" /> 
+</a>
+</p>
 
 
 1. Read through the [support guide](https://fig.io/docs) in the docs 
