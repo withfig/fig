@@ -65,7 +65,7 @@ Again, start [here](https://github.com/withfig/fig/issues/new/choose) and then w
 
 <p align="center">
 <a href="https://fig.io/community">
-    <img src="http://fig.io/icons/discord-logo-square.png" width="60px" height="60px" /> 
+    <img src="http://fig.io/icons/discord-logo-square.png" width="80px" height="80px" /> 
 </a>
 </p>
 
