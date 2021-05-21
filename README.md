@@ -61,12 +61,13 @@ Again, start [here](https://github.com/withfig/fig/issues/new/choose) and then w
 
 1. Check out our public forum: [forum.withfig.com](https://forum.withfig.com)
 
-2. Join the [Fig Community Slack](https://waitlist.withfig.com/community) to discuss with others and get immediate support from the Fig team
+2. Join the [Fig Community Discord](https://fig.io/community) to discuss with others and get immediate support from the Fig team
 
-[![Fig Slack Community](https://github.com/jesseduffield/lazydocker/raw/master/docs/resources/slack_rgb.png)](https://waitlist.withfig.com/community)
+<a href="https://fig.io/community"><img href="http://fig.io/icons/discord-logo-square.jpeg" style="width: 50px; height: 50px"/> </a>
 
-3. Read through the [support guide](https://fig.io/docs) in the docs 
 
-4. Look through [past issues](https://github.com/withfig/fig/issues) in this repo or create an issue [here](https://github.com/withfig/fig/issues/new/choose) 
+1. Read through the [support guide](https://fig.io/docs) in the docs 
+
+2. Look through [past issues](https://github.com/withfig/fig/issues) in this repo or create an issue [here](https://github.com/withfig/fig/issues/new/choose) 
 
 For any unanswered questions or other inquiries, feel free to email us any time: [hello@fig.io](mailto:hello@fig.io)
