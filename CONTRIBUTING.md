@@ -55,6 +55,8 @@ By contributing, you agree that your contributions will be licensed under its MI
 
 ## Questions and support
 
-For product support, visit our [docs](https://fig.io/docs), view content in our [forum](https:;//forum.withfig.com) and/or join the [Fig Community](http://waitlist.withfig.com/community) for instant support and discussion.
+* User Support: [fig.io/support][https://fig.io/support]
+* Developer Support: [fig.io/docs][https://fig.io/docs]
+* Discord Community: [fig.io/community][https://fig.io/community]
+* Email: [hello@fig.io](mailto:hello@fig.io)
 
-Any unanswered questions or inquiries? We're always open to chat at [hello@fig.io](mailto:hello@fig.io)

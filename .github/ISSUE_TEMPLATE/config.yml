@@ -10,9 +10,9 @@ contact_links:
   - about: "Use this repo to file issues related to Fig's shell integrations, SSH integration, shell onboarding flow, and installation/update scripts."
     name: withfig/config
     url: "https://github.com/withfig/config/issues/new/choose"
-  - about: "Fig's support knowledge base"
-    name: "💬  Forum"
-    url: "https://forum.withfig.com"
+  - about: "Fig's support guide"
+    name: "💬  Support Guide"
+    url: "https://fig.io/support"
   - about: "Get instant support from the Fig Community Discord"
     name: "👋  Discord"
     url: "https://fig.io/community"

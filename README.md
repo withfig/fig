@@ -59,7 +59,7 @@ Again, start [here](https://github.com/withfig/fig/issues/new/choose) and then w
 
 ## Support and Questions
 
-1. Check out our public forum: [forum.withfig.com](https://forum.withfig.com)
+1. Check out our support guide: [fig.io/support][https://fig.io/support]
 
 2. Join the [Fig Community Discord](https://fig.io/community) to discuss with others and get immediate support from the Fig team
 
