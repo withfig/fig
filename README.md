@@ -13,7 +13,7 @@
 
 ![Fig Visual Autocomplete For Your Terminal Demo](https://fig.io/video/demos/autocomplete/autocomplete_demo_for_email.gif)
 
-***\*Note\****: We currently work on macOS in VSCode, iTerm2, and the native Terminal (more coming soon).
+***\*Note\****: We currently work on macOS in VSCode, iTerm2, Hyper, and the native Terminal (more coming soon).
 
 
 
@@ -27,7 +27,6 @@ Use this (withfig/fig) repository to submit new issues and have discussions.
 
 - [withfig/config](https://github.com/withfig/config): Fig's default configuration at install. Contains installation, and update scripts.
 
-- [withfig/docs](https://github.com/withfig/docs): Fig's docs!
 
 
 ## Contributing
@@ -59,11 +58,15 @@ Again, start [here](https://github.com/withfig/fig/issues/new/choose) and then w
 
 ## Support and Questions
 
-1. Check out our support guide: [fig.io/support][https://fig.io/support]
+1. Check out our support guide: [fig.io/support](https://fig.io/support)
 
 2. Join the [Fig Community Discord](https://fig.io/community) to discuss with others and get immediate support from the Fig team
 
-<a href="https://fig.io/community"><img href="http://fig.io/icons/discord-logo-square.jpeg" style="width: 50px; height: 50px"/> </a>
+<p align="center">
+<a href="https://fig.io/community">
+    <img src="http://fig.io/icons/discord-logo-square.png" width="80px" height="80px" /> 
+</a>
+</p>
 
 
 1. Read through the [support guide](https://fig.io/docs) in the docs 
