@@ -23,7 +23,7 @@
 
 Use this (withfig/fig) repository to submit new issues and have discussions.
 
-- [withfig/autocomplete](https://github.com/withfig/autocomplete): Collection of all specs for [autocomplete](https://fig.io/docs/autocomplete). Contribute new specs and update old specs here.
+- [withfig/autocomplete](https://github.com/withfig/autocomplete): Collection of all specs for [autocomplete](https://fig.io/docs). Contribute new specs and update old specs here.
 
 - [withfig/config](https://github.com/withfig/config): Fig's default configuration at install. Contains installation, and update scripts.
 
@@ -39,7 +39,7 @@ You can start building [autocomplete specs](https://github.com/withfig/autocompl
 
 ## Docs
 
-Our docs are available at [fig.io/docs](https://fig.io/docs). If you want to make changes, visit [withfig/docs](https://github.com/withfig/docs)
+Our docs are available at [fig.io/docs](https://fig.io/docs).
 
 
 ## Issues, Bugs & Feature Requests
