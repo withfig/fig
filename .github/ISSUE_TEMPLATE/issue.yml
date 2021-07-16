@@ -8,8 +8,7 @@ body:
     options:
     - label: I have searched [github.com/withfig/fig/issues](https://github.com/withfig/fig/issues?q=) and there are no duplicates of my issue
       required: true
-    - label: | 
-      My issue does not relate to an error with a specific CLI tool (e.g. `git checkout` is missing options). If it does, please create your issue here: [withfig/autocomplete](https://github.com/withfig/autocomplete/issues?q=)
+    - label: "My issue does not relate to an error with a specific CLI tool (e.g. `git checkout` is missing options). If it does, please create your issue here: [withfig/autocomplete](https://github.com/withfig/autocomplete/issues?q=)"
       required: true
 - type: textarea
   attributes:
