@@ -1,6 +1,6 @@
 name: My Issue does not relate to a specific CLI tool
 description: All issues except ones relating to specific CLI tools
-title: " "
+title: 
 labels: [NEED_TO_LABEL]
 body:
 - type: checkboxes
