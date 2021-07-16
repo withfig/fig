@@ -1,13 +1,14 @@
-name: My Issue does not relate to a specific CLI tool
+name: Main Issue Template
 description: All issues except ones relating to specific CLI tools
-title: 
 labels: [NEED_TO_LABEL]
 body:
 - type: checkboxes
   attributes:
-    label: Have you searched for a duplicate issue?
+    label: Sanity checks
     options:
-    - label: I have searched [github.com/withfig/fig/issues](https://github.com/withfig/fig/issues?q=) and there are no duplicates
+    - label: I have searched [github.com/withfig/fig/issues](https://github.com/withfig/fig/issues?q=) and there are no duplicates of my issue
+      required: true
+    - label: My issue does not relate to an error with a specific CLI tool (e.g. `git checkout` is missing options). If it does, please create your issue here: [withfig/autocomplete](https://github.com/withfig/autocomplete/issues?q=)
       required: true
 - type: textarea
   attributes:
