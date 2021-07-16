@@ -1,25 +1,41 @@
-name: Issue
-description: File a bug/issue
-title: "[BUG] <title>"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+name: Create Issue
+description: All issues except ones relating to specific CLI tools
+title: ""
 labels: [NEED_TO_LABEL]
 body:
 - type: checkboxes
   attributes:
     label: Is there an existing issue for this?
-    description: Please search to see if an issue already exists for the bug you encountered.
+    description: Please search [github.com/withfig/fig/issues](https://github.com/withfig/fig/issues) to see if an issue already exists for the bug you encountered.
     options:
     - label: I have searched the existing issues
       required: true
 - type: textarea
   attributes:
-    label: Current Behavior
-    description: A concise description of what you're experiencing.
+    label: Issue Summary
+    description: Summarise your issue
+    placeholder: e.g. the autocomplete popup sometimes doesn't appear after changing tabs
   validations:
     required: false
 - type: textarea
   attributes:
     label: Expected Behavior
-    description: A concise description of what you expected to happen.
+    description: What did you expect to happen?
   validations:
     required: false
 - type: textarea
@@ -35,25 +51,41 @@ body:
     required: false
 - type: textarea
   attributes:
-    label: Environment
-    description: |
-      examples:
-        - **OS**: Ubuntu 20.04
-        - **Node**: 13.14.0
-        - **npm**: 7.6.3
-    value: |
-        - OS: 
-        - Node: 
-        - npm: 
-    render: markdown
+    label: Output of `fig diagnostic`
+    description: Run `fig diagnostic` and paste the output below. If you can't, tell us any information you think is relevant (OS, m1 etc)
+    render: bash
   validations:
     required: false
+- type: dropdown
+  attributes:
+    label: Specific Terminal?
+    options:
+      - native macOS terminal
+      - VSCode
+      - iTerm2
+      - Hyper
+    multiple: true
+- type: dropdown
+  attributes:
+    label: Specific Shell?
+    options:
+      - bash
+      - zsh
+      - fish
+      - other
+    multiple: true
+- type: dropdown
+  attributes:
+    label: Specific Integration?
+    options:
+      - ssh
+      - docker
+      - tmux
+    multiple: true
 - type: textarea
   attributes:
     label: Anything else?
     description: |
       Links? References? Anything that will give us more context about the issue you are encountering!
-      
-      Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
   validations:
     required: false
