@@ -13,20 +13,7 @@ body:
   attributes:
     label: Issue Details
     description: What happens? What do you expect? How do we reproduce?
-    value: |
-    ### Summary 
-    e.g. Autocomplete is occasionally nonresponsive
-    
-    ### Steps to Reproduce
-    1. ..
-    2. ..
-    
-    ### Expected Results
-    e.g. Autocomplete suggestion box should always pop up.
-    
-    
-    ### Actual Results
-    e.g. Occasionally, the suggestion box disappears and reappears after entering a few commands.
+    value: "### Summary\ne.g. Autocomplete is occasionally nonresponsive\n\n### Steps to Reproduce"
   validations:
     required: true
 - type: textarea
