@@ -7,7 +7,7 @@ body:
   attributes:
     label: Have you searched for a duplicate issue?
     options:
-    - label: I have searched [github.com/withfig/fig/issues](https://github.com/withfig/fig/issues) and there are no duplicates
+    - label: I have searched [github.com/withfig/fig/issues](https://github.com/withfig/fig/issues?q=) and there are no duplicates
       required: true
 - type: textarea
   attributes:
