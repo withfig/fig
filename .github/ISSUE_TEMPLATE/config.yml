@@ -1,18 +1,12 @@
 ---
 blank_issues_enabled: true
 contact_links:
-  - about: "Use this repo to file issues related to Fig's docs"
-    name: withfig/docs
-    url: "https://github.com/withfig/docs/issues/new"
-  - about: "Use this repo to file issues related to autocomplete. These include issues for specific completion specs (e.g. git, aws, docker...), building specs, and Fig's bash parser."
-    name: withfig/autocomplete
+  - about: "e.g. git, kubectl, npm etc"
+    name: My issue relates to a specific CLI tool
     url: "https://github.com/withfig/autocomplete/issues/new/choose"
-  - about: "Use this repo to file issues related to Fig's shell integrations, SSH integration, shell onboarding flow, and installation/update scripts."
-    name: withfig/config
-    url: "https://github.com/withfig/config/issues/new/choose"
-  - about: "Fig's support guide"
-    name: "💬  Support Guide"
-    url: "https://fig.io/support"
+  - about: "Find detailed guides about common support issues in our forum"
+    name: "💬  GitHub Discussions"
+    url: "https://github.com/withfig/fig/discussion"
   - about: "Get instant support from the Fig Community Discord"
     name: "👋  Discord"
     url: "https://fig.io/community"
