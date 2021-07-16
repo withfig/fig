@@ -1,21 +1,6 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 name: Create Issue
 description: All issues except ones relating to specific CLI tools
-title: ""
+title: "ISSUE TITLE"
 labels: [NEED_TO_LABEL]
 body:
 - type: checkboxes
