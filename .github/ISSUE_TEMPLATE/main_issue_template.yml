@@ -45,6 +45,7 @@ body:
   attributes:
     options:
     - label: "Is this issue related to the docs?"
+    required: false
 - type: textarea
   attributes:
     label: Anything else?
