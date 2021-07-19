@@ -43,7 +43,10 @@ body:
     multiple: true
 - type: checkboxes
   attributes:
-    label: "Is this issue related to the docs?"
+    label: Is this issue related to the docs?
+    options:
+    - label: "Yes"
+    - label: "No"
 - type: textarea
   attributes:
     label: Anything else?
