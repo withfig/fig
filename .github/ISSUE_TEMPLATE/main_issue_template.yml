@@ -43,9 +43,7 @@ body:
     multiple: true
 - type: checkboxes
   attributes:
-    options:
-    - label: "Is this issue related to the docs?"
-    required: false
+    label: "Is this issue related to the docs?"
 - type: textarea
   attributes:
     label: Anything else?
