@@ -13,7 +13,7 @@ body:
     label: Issue Details
     description: What happens? What do you expect? How do we reproduce?
     # Because we are using hashtags at the start of a line, we must put the value in quotes. We cannot use YAML's multiline syntax with the pipe symbol
-    value: "### Summary\ne.g. Autocomplete is occasionally nonresponsive\n\n### Steps to Reproduce\n1. ..\n2. ..\n\n### Expected Results\ne.g. Autocomplete suggestion box should always pop up."
+    value: "### Summary\ne.g. Autocomplete is occasionally non-responsive\n\n### Steps to Reproduce\n1. ..\n2. ..\n\n### Expected Results\ne.g. Autocomplete suggestion box should always pop up."
   validations:
     required: true
 - type: textarea
