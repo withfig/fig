@@ -1,0 +1,18 @@
+name: New Feature Template
+description: All new feature requests except ones relating to specific CLI tools
+labels: [NEED_TO_LABEL]
+body:
+- type: checkboxes
+  attributes:
+    label: Sanity checks
+    options:
+    - label: "I have searched [github.com/withfig/fig/issues](https://github.com/withfig/fig/issues?q=) and there are no duplicates of my feature"
+      required: true
+- type: textarea
+  attributes:
+    label: Feature Details
+    description: What should this feature do? What problem does it solve?
+    # Because we are using hashtags at the start of a line, we must put the value in quotes. We cannot use YAML's multiline syntax with the pipe symbol
+    value: "### Description:\n> Please include a detailed description of the feature (and an image or screen recording, if applicable)"
+  validations:
+    required: true
