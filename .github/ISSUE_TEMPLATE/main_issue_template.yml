@@ -8,14 +8,12 @@ body:
     options:
     - label: "I have searched [github.com/withfig/fig/issues](https://github.com/withfig/fig/issues?q=) and there are no duplicates of my issue"
       required: true
-    - label: "My issue does not relate to a specific CLI completion spec (e.g. `git checkout` is missing options in `git` completion spec). If it does, please create your issue here: [withfig/autocomplete](https://github.com/withfig/autocomplete/issues?q=)"
-      required: true
 - type: textarea
   attributes:
     label: Issue Details
     description: What happens? What do you expect? How do we reproduce?
     # Because we are using hashtags at the start of a line, we must put the value in quotes. We cannot use YAML's multiline syntax with the pipe symbol
-    value: "### Summary\ne.g. Autocomplete is occasionally nonresponsive\n\n\n### Steps to Reproduce\n1. ..\n2. ..\n\n\n### Expected Results\ne.g. Autocomplete suggestion box should always pop up.\n\n\n### Actual Results\ne.g. Occasionally, the suggestion box disappears and reappears after entering a few commands.\n\n"
+    value: "### Summary\ne.g. Autocomplete is occasionally nonresponsive\n\n### Steps to Reproduce\n1. ..\n2. ..\n\n### Expected Results\ne.g. Autocomplete suggestion box should always pop up."
   validations:
     required: true
 - type: textarea
@@ -25,26 +23,3 @@ body:
     render: bash
   validations:
     required: true
-- type: dropdown
-  attributes:
-    label: More Detail
-    description: Is your issue only reproducible in any of the following terminals, shells, or integrations? If reproducible in all, leave blank.
-    options:
-      - terminal::native macOS terminal
-      - terminal::VSCode
-      - terminal::iTerm2
-      - terminak::Hyper
-      - shell::bash
-      - shell::zsh
-      - shell::fish
-      - integration::ssh
-      - integration::docker
-      - integration::tmux
-    multiple: true
-- type: textarea
-  attributes:
-    label: Anything else?
-    description: |
-      Links? References? Anything that will give us more context about the issue you are encountering!
-  validations:
-    required: false
