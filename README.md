@@ -9,7 +9,7 @@
 [Fig](https://fig.io?ref=github_fig) adds apps, shortcuts, and autocomplete to your Terminal ✨
 
 
-👉 *Fig is currently in private beta. Sign up for early access at [fig.io](http://fig.io?ref=github_fig)*
+👉  *Download for macOS from: [fig.io](http://fig.io?ref=github_fig)*
 
 ![Fig Visual Autocomplete For Your Terminal Demo](https://fig.io/video/demos/autocomplete/autocomplete_demo_for_email.gif)
 
@@ -25,7 +25,6 @@ Use this (withfig/fig) repository to submit new issues and have discussions.
 
 - [withfig/autocomplete](https://github.com/withfig/autocomplete): Collection of all specs for [autocomplete](https://fig.io/docs). Contribute new specs and update old specs here.
 
-- [withfig/config](https://github.com/withfig/config): Fig's default configuration at install. Contains installation, and update scripts.
 
 
 
@@ -69,7 +68,7 @@ Again, start [here](https://github.com/withfig/fig/issues/new/choose) and then w
 </p>
 
 
-1. Read through the [support guide](https://fig.io/docs) in the docs 
+1. Read through the [support guide](https://fig.io/support) in the docs 
 
 2. Look through [past issues](https://github.com/withfig/fig/issues) in this repo or create an issue [here](https://github.com/withfig/fig/issues/new/choose) 
 
