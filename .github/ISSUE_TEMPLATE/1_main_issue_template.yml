@@ -8,6 +8,8 @@ body:
     options:
     - label: "I have searched [github.com/withfig/fig/issues](https://github.com/withfig/fig/issues?q=) and there are no duplicates of my issue"
       required: true
+    - label: "I have run `fig doctor` in the affected terminal session"
+      required: true
 - type: textarea
   attributes:
     label: Issue Details
