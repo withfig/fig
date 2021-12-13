@@ -10,7 +10,6 @@ body:
       required: true
     - label: "I have run `fig doctor` in the affected terminal session"
       required: true
-    - label: "I have typed 'git ' and taken a screenshot of the Debugger (click the Fig icon in the menubar)"
 - type: textarea
   attributes:
     label: Issue Details
@@ -19,6 +18,12 @@ body:
     value: "### Description:\n> Please include a detailed description of the issue (and an image or screen recording, if applicable)"
   validations:
     required: true
+- type: checkboxes
+  attributes:
+    label: Debugger
+    description: If the autocomplete window doesn't appear at all, please type `git ` and take a screenshot of the Debugger (click the Fig icon in the macOS menu bar).
+    options:
+      - label: "I have included a screenshot of the Fig Debugger"
 - type: textarea
   attributes:
     label: Environment
