@@ -10,7 +10,7 @@ body:
       required: true
     - label: "I have run `fig doctor` in the affected terminal session"
       required: true
-    - label: "I have typed "git " and taken a screenshot of the Debugger (click the Fig icon in the menubar)"
+    - label: "I have typed 'git ' and taken a screenshot of the Debugger (click the Fig icon in the menubar)"
 - type: textarea
   attributes:
     label: Issue Details
