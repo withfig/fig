@@ -1,5 +1,6 @@
 <p align="center">
-    <img width="300" src="static/FigBanner.png"/>
+    <img width="300" src="static/FigBanner.png#gh-light-mode-only"/>
+    <img width="300" src="static/FigBannerInverted.png#gh-dark-mode-only"/>
 </p>
 
 ---
@@ -48,8 +49,8 @@ Our docs are available at [fig.io/docs](https://fig.io/docs).
 
 Most issues are made in this repo. Only create issues in other repos for the following:
 
-- [withfig/autocomplete](https://github.com/withfig/autocomplete): Issues with specific completion specs (e.g. git, aws...) or the completion spec standard (e.g. the standard doesn't work with this specific type of CLI argument) 
-- [withfig/config](https://github.com/withfig/config): Issues with Fig's installation and update scripts (e.g. perhaps the Fig CLI is not being added to your $PATH because of a custom set up or shell) 
+- [withfig/autocomplete](https://github.com/withfig/autocomplete): Issues with specific completion specs (e.g. git, aws...) or the completion spec standard (e.g. the standard doesn't work with this specific type of CLI argument)
+- [withfig/config](https://github.com/withfig/config): Issues with Fig's installation and update scripts (e.g. perhaps the Fig CLI is not being added to your $PATH because of a custom set up or shell)
 
 Again, start [here](https://github.com/withfig/fig/issues/new/choose) and then we will redirect you accordingly.
 
@@ -63,13 +64,13 @@ Again, start [here](https://github.com/withfig/fig/issues/new/choose) and then w
 
 <p align="center">
 <a href="https://fig.io/community">
-    <img src="http://fig.io/icons/discord-logo-square.png" width="80px" height="80px" /> 
+    <img src="http://fig.io/icons/discord-logo-square.png" width="80px" height="80px" />
 </a>
 </p>
 
 
-1. Read through the [support guide](https://fig.io/support) in the docs 
+1. Read through the [support guide](https://fig.io/support) in the docs
 
-2. Look through [past issues](https://github.com/withfig/fig/issues) in this repo or create an issue [here](https://github.com/withfig/fig/issues/new/choose) 
+2. Look through [past issues](https://github.com/withfig/fig/issues) in this repo or create an issue [here](https://github.com/withfig/fig/issues/new/choose)
 
 For any unanswered questions or other inquiries, feel free to email us any time: [hello@fig.io](mailto:hello@fig.io)
