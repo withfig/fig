@@ -55,8 +55,8 @@ By contributing, you agree that your contributions will be licensed under its MI
 
 ## Questions and support
 
-* User Support: [fig.io/support][https://fig.io/support]
-* Developer Support: [fig.io/docs][https://fig.io/docs]
-* Discord Community: [fig.io/community][https://fig.io/community]
+* User Support: [fig.io/support](https://fig.io/support)
+* Developer Support: [fig.io/docs](https://fig.io/docs)
+* Discord Community: [fig.io/community](https://fig.io/community)
 * Email: [hello@fig.io](mailto:hello@fig.io)
 
