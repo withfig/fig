@@ -9,10 +9,9 @@
 
 [Fig](https://fig.io?ref=github_fig) adds apps, shortcuts, and autocomplete to your Terminal ✨
 
-
 👉  *Download for macOS from: [fig.io](http://fig.io?ref=github_fig)*
 
-![Fig Visual Autocomplete For Your Terminal Demo](https://fig.io/video/demos/autocomplete/autocomplete_demo_for_email.gif)
+![Fig Visual Autocomplete For Your Terminal Demo](https://fig.io/gifs/demo-with-header.gif)
 
 ***\*Note\****: We currently work on macOS in VSCode, iTerm2, Hyper, and the native Terminal (more coming soon).
 
