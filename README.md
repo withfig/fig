@@ -5,7 +5,7 @@
 
 ---
 
-[Fig](https://fig.io?ref=github_fig) is reimaging the terminal. Our first extension is [autocomplete](https://github.com/withfig/autocomplete). ✨
+[Fig](https://fig.io?ref=github_fig) is reimaging the terminal, starting with [autocomplete](https://github.com/withfig/autocomplete). ✨
 
 ![Fig Visual Autocomplete For Your Terminal Demo](https://fig.io/gifs/demo-with-header.gif)
 
