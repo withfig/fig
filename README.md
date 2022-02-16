@@ -7,16 +7,18 @@
 
 # Fig
 
-[Fig](https://fig.io?ref=github_fig) adds apps, shortcuts, and autocomplete to your Terminal ✨
-
-👉  *Download for macOS from: [fig.io](http://fig.io?ref=github_fig)*
+[Fig](https://fig.io?ref=github_fig) is reimaging the terminal. ✨
 
 ![Fig Visual Autocomplete For Your Terminal Demo](https://fig.io/gifs/demo-with-header.gif)
 
-***\*Note\****: We currently work on macOS in VSCode, iTerm2, Hyper, and the native Terminal (more coming soon).
 
-
-
+## ⚡️ Installation
+##### With [Homebrew](https://brew.sh): 
+```
+brew install --cask fig
+```
+##### Manually: 
+Download the macOS app at [fig.io/download](https://fig.io/download).
 
 
 ## Repositories
@@ -25,8 +27,9 @@ Use this (withfig/fig) repository to submit new issues and have discussions.
 
 - [withfig/autocomplete](https://github.com/withfig/autocomplete): Collection of all specs for [autocomplete](https://fig.io/docs). Contribute new specs and update old specs here.
 
+## Known Issues
 
-
+For details about conflicts between Fig and other tools that must be fixed upstream, see [KNOWN-ISSUES.md](KNOWN-ISSUES.md)
 
 ## Contributing
 
