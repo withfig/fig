@@ -22,11 +22,6 @@ Here are some of our primary repos.
 
 [withfig/autocomplete](https://github.com/withfig/autocomplete): Collection of all specs for [autocomplete](https://fig.io/docs/autocomplete). Contribute new specs, update old specs, and file issues for existing specs here.
 
-[withfig/config](https://github.com/withfig/config): Fig's default configuration at install. Contains all installation and update scripts.
-
-[withfig/docs](https://github.com/withfig/docs): Fig's docs!
-
-
 
 ## Proposing changes
 
