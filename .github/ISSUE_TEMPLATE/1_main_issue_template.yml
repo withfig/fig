@@ -10,19 +10,26 @@ body:
       required: true
     - label: "I have run `fig doctor` in the affected terminal session"
       required: true
+    - label: "I have run `fig restart` and tested again (tell us if that fixed it)"
+      retuired: true
     - label: "I have typed 'git ' and included a screenshot of the Debugger (click the Fig icon in the macOS menu bar)"
 - type: textarea
   attributes:
     label: Issue Details
     description: What happens? What do you expect? How do we reproduce?
     # Because we are using hashtags at the start of a line, we must put the value in quotes. We cannot use YAML's multiline syntax with the pipe symbol
-    value: "### Description:\n> Please include a detailed description of the issue (and an image or screen recording, if applicable)"
+    value: |
+      ### Description:
+      <!--
+      Explain the expected behavior, what the error is, and how to make the error happen.
+      We can fix the problem much faster if you include a video or screenshot!
+      -->
   validations:
     required: true
 - type: textarea
   attributes:
     label: Environment
-    description: Run `fig diagnostic` and paste the output below. If you can't, tell us any information you think is relevant (OS, m1 etc)
+    description: "Run `fig diagnostic` and paste the output below. If you can't, tell us any information you think is relevant (OS, m1 etc)"
     render: bash
   validations:
     required: true
