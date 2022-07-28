@@ -12,7 +12,6 @@ body:
       required: true
     - label: "I have run `fig restart` and tested again (tell us if that fixed it)"
       required: true
-    - label: "I have typed 'git ' and included a screenshot of the Debugger (click the Fig icon in the macOS menu bar)"
 - type: textarea
   attributes:
     label: Issue Details
@@ -21,9 +20,11 @@ body:
     value: |
       ### Description:
       <!--
-      Explain the expected behavior, what the error is, and how to make the error happen.
-      We can fix the problem much faster if you include a video or screenshot!
-      -->
+      Explain what you expected to happen, what actually happened, and how we can reproduce it.
+      We can fix it faster if you add a video or screenshot!
+      <!-- ----- WRITE BELOW THIS LINE ----- -->
+      
+      
   validations:
     required: true
 - type: textarea
