@@ -11,7 +11,7 @@ body:
     - label: "I have run `fig doctor` in the affected terminal session"
       required: true
     - label: "I have run `fig restart` and tested again (tell us if that fixed it)"
-      retuired: true
+      required: true
     - label: "I have typed 'git ' and included a screenshot of the Debugger (click the Fig icon in the macOS menu bar)"
 - type: textarea
   attributes:
