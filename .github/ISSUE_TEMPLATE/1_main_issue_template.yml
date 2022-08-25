@@ -31,6 +31,6 @@ body:
   attributes:
     label: Environment
     description: "Run `fig diagnostic` and paste the output below. If you can't, tell us any information you think is relevant (OS, m1 etc)"
-    render: bash
+    render: yaml
   validations:
     required: true
