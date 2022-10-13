@@ -1,36 +1,38 @@
-name: Main Issue Template
-description: All issues except ones relating to specific CLI tools
-labels: [NEED_TO_LABEL]
+name: "Issue Template"
+description: "File an issue related to Fig"
+title: "bug: "
+labels: ["NEED_TO_LABEL", "type:bug"]
+
 body:
 - type: checkboxes
+  id: "checks"
   attributes:
-    label: Sanity checks
+    label: "Checks"
     options:
     - label: "I have searched [github.com/withfig/fig/issues](https://github.com/withfig/fig/issues?q=) and there are no duplicates of my issue"
       required: true
     - label: "I have run `fig doctor` in the affected terminal session"
       required: true
-    - label: "I have run `fig restart` and tested again (tell us if that fixed it)"
+    - label: "I have run `fig restart` and replicated the issue again"
       required: true
-- type: textarea
+
+- type: input
+  id: "os"
   attributes:
-    label: Issue Details
-    description: What happens? What do you expect? How do we reproduce?
-    # Because we are using hashtags at the start of a line, we must put the value in quotes. We cannot use YAML's multiline syntax with the pipe symbol
-    value: |
-      ### Description:
-      <!--
-      Explain what you expected to happen, what actually happened, and how we can reproduce it.
-      We can fix it faster if you add a video or screenshot!
-      <!-- ----- WRITE BELOW THIS LINE ----- -->
-      
-      
+    label: "Operating System"
+  validations: required: true
+
+- type: textarea
+  id: "details"
+  attributes:
+    label: "Issue Details"
+    description: "Tell us what happened, and what the expected behaviour is. Please provide a screenshot or video if possible."
   validations:
     required: true
+
 - type: textarea
+  id: "environment"
   attributes:
-    label: Environment
-    description: "Run `fig diagnostic` and paste the output below. If you can't, tell us any information you think is relevant (OS, m1 etc)"
+    label: "Environment"
+    description: "If possible, run `fig diagnostic` and paste the output below."
     render: yaml
-  validations:
-    required: true
