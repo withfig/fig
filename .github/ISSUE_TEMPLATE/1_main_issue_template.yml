@@ -19,17 +19,31 @@ body:
 - type: input
   id: "os"
   attributes:
-    label: "Operating System"
+    label: "Operating system"
+  validations:
+    required: true
+    
+- type: textarea
+  id: "expected"
+  attributes:
+    label: "Expected behaviour"
+    description: "What did you expect to happen?"
+  validations:
+    required: true
+    
+- type: textarea
+  id: "actual"
+  attributes:
+    label: "Actual behaviour"
+    description: "What actually happened? Please provide a screenshot or video if possible."
   validations:
     required: true
 
 - type: textarea
-  id: "details"
+  id: "reproduce"
   attributes:
-    label: "Issue Details"
-    description: "Tell us what happened, and what the expected behaviour is. Please provide a screenshot or video if possible."
-  validations:
-    required: true
+    label: "Steps to reproduce"
+    description: "Are you able to reproduce this issue? If so, how?"
 
 - type: textarea
   id: "environment"
