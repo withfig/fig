@@ -20,7 +20,8 @@ body:
   id: "os"
   attributes:
     label: "Operating System"
-  validations: required: true
+  validations:
+    required: true
 
 - type: textarea
   id: "details"
