@@ -5,7 +5,7 @@
 
 ---
 
-Fig ([fig.io](https://fig.io)) makes the terminal easier for individuals and more collaborative for teams.
+[Fig](https://fig.io?ref=github_fig) makes the shell easier for individuals and more collaborative for teams.
 
 We make lots of products. Check out our website to see them all.
 
