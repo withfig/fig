@@ -1,7 +1,6 @@
-name: "Issue Template"
 description: "File an issue related to Fig"
 title: "bug: "
-labels: ["NEED_TO_LABEL", "type:bug"]
+# labels: [""]
 
 body:
 - type: checkboxes
