@@ -1,4 +1,4 @@
-name: "Issue Template"
+name: "Bug Template"
 description: "File an issue related to Fig"
 title: "bug: "
 labels: ["NEED_TO_LABEL"]
