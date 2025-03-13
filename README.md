@@ -1,3 +1,8 @@
+# Fig is now part of Amazon Q.
+### The code is open source and available [here](https://github.com/aws/amazon-q-developer-cli). Please create issues in the new repository.
+
+---
+
 <p align="center">
     <img width="300" src="static/FigBanner.png#gh-light-mode-only"/>
     <img width="300" src="static/FigBannerInverted.png#gh-dark-mode-only"/>
