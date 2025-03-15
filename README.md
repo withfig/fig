@@ -31,6 +31,7 @@ We make lots of products. Check out our website to see them all.
 
 - [withfig/fig](https://github.com/withfig/fig): Submit new bugs and issues
 - [withfig/autocomplete](https://github.com/withfig/autocomplete): Collection of all specs for [autocomplete](https://fig.io/docs). Contribute new specs and update old specs here.
+- [withfig/plugins](https://github.com/withfig/plugins): Collection of all plugins for [plugins](https://dashboard.fig.io/login). Contribute new plugins here.
 
 
 ## Contributing
